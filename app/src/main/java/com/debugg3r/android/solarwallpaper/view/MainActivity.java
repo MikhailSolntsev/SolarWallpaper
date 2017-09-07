@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         buttonSet.setOnClickListener(
                 (view) -> {
-                    mainPresenter.setBitmapFromResource(mImageViewWall, R.drawable.latest);
+                    mainPresenter.setBitmapToImageViewFromResource(mImageViewWall, R.drawable.latest);
                 });
 //        new View.OnClickListener() {
 //            @Override
