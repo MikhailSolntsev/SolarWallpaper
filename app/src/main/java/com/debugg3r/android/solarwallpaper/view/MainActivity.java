@@ -1,7 +1,9 @@
 package com.debugg3r.android.solarwallpaper.view;
 
+import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -11,8 +13,9 @@ import com.debugg3r.android.solarwallpaper.presenter.MainPresenter;
 
 import javax.inject.Inject;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MainView{
 
+    private static final String LOG_TAG = "MAIN_ACTIVITY";
     @Inject
     MainPresenter mainPresenter;
 
@@ -29,21 +32,46 @@ public class MainActivity extends AppCompatActivity {
 
         buttonSet.setOnClickListener(
                 (view) -> {
-                    mainPresenter.setBitmapToImageViewFromResource(mImageViewWall, R.drawable.latest);
+                    mainPresenter.loadCurrentImage();
                 });
-//        new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mImageViewWall.setImageResource(R.drawable.latest);
-//                Bitmap image = BitmapFactory.decodeResource(getResources(), R.drawable.latest);
-//
-//                try {
-//                    WallpaperManager.getInstance(MainActivity.this)
-//                            .setBitmap(image);
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mainPresenter.attachView(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mainPresenter.deattachView();
+    }
+
+    @Override
+    public void showProgress() {
+
+    }
+
+    @Override
+    public void hideProgress() {
+
+    }
+
+    @Override
+    public void setImage(Bitmap image) {
+        mImageViewWall.setImageBitmap(image);
+    }
+
+    @Override
+    public int getImageHeight() {
+        Log.d(LOG_TAG, "Image height: " + String.valueOf(mImageViewWall.getHeight()));
+        return mImageViewWall.getHeight();
+    }
+
+    @Override
+    public int getImageWidth() {
+        Log.d(LOG_TAG, "Image width: " + String.valueOf(mImageViewWall.getWidth()));
+        return mImageViewWall.getWidth();
     }
 }

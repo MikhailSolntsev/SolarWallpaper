@@ -1,30 +1,17 @@
 package com.debugg3r.android.solarwallpaper.presenter;
 
-import android.graphics.Bitmap;
-import android.widget.ImageView;
+import android.support.annotation.NonNull;
 
-import com.debugg3r.android.solarwallpaper.model.BitmapService;
-import com.debugg3r.android.solarwallpaper.model.DataManager;
+import com.debugg3r.android.solarwallpaper.view.MainView;
 
-import javax.inject.Inject;
-import javax.inject.Singleton;
+public interface MainPresenter {
 
-@Singleton
-public class MainPresenter {
+    void attachView(@NonNull MainView view);
 
-    private DataManager mDataManager;
+    void deattachView();
 
-    @Inject
-    public MainPresenter(DataManager dataManager) {
-        mDataManager = dataManager;
-    }
+    void loadCurrentImage();
 
-    public void setBitmapToImageViewFromResource(ImageView imageView, int drawable) {
-        Bitmap bitmap = mDataManager.getBitmapFromResource(drawable);
-//        int height = imageView.getHeight();
-//        int width = imageView.getWidth();
-//        bitmap = BitmapService.fitBitmapToSize(bitmap, height, width);
-        imageView.setImageBitmap(bitmap);
-    }
+    void scheduleJob();
 
 }

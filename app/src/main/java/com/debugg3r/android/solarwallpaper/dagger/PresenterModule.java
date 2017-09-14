@@ -2,6 +2,7 @@ package com.debugg3r.android.solarwallpaper.dagger;
 
 import com.debugg3r.android.solarwallpaper.model.DataManager;
 import com.debugg3r.android.solarwallpaper.presenter.MainPresenter;
+import com.debugg3r.android.solarwallpaper.presenter.MainPresenterImpl;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -15,6 +16,6 @@ public class PresenterModule {
     @ApplicationScope
     @Inject
     public MainPresenter provideMainPresenter(DataManager dataManager) {
-        return new MainPresenter(dataManager);
+        return new MainPresenterImpl(dataManager);
     }
 }

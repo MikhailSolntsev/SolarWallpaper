@@ -3,6 +3,7 @@ package com.debugg3r.android.solarwallpaper.model;
 import android.content.Context;
 import android.graphics.Bitmap;
 
+import com.debugg3r.android.solarwallpaper.R;
 import com.debugg3r.android.solarwallpaper.model.BitmapService;
 
 public class DataManager {
@@ -13,7 +14,7 @@ public class DataManager {
         this.mContext = context;
     }
 
-    public Bitmap getBitmapFromResource(int drawable) {
-        return BitmapService.getBitmapFromResource(mContext, drawable);
+    public Bitmap getBitmapFromResource() {
+        return BitmapService.getBitmapFromResource(mContext, R.drawable.latest);
     }
 }
