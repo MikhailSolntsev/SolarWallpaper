@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">SolarWallpaper</string>
     <string name="set_wallpaper">Set wallpaper</string>
+    <string name="show_image">Show image</string>
 </resources>

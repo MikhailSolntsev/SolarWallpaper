@@ -14,4 +14,5 @@ public interface MainPresenter {
 
     void scheduleJob();
 
+    void setWallpaper();
 }

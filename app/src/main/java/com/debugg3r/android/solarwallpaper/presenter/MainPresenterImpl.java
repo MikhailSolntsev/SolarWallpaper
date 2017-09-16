@@ -1,11 +1,14 @@
 package com.debugg3r.android.solarwallpaper.presenter;
 
 import android.graphics.Bitmap;
+import android.graphics.Point;
 import android.util.Log;
 
 import com.debugg3r.android.solarwallpaper.model.BitmapService;
 import com.debugg3r.android.solarwallpaper.model.DataManager;
 import com.debugg3r.android.solarwallpaper.view.MainView;
+
+import java.io.IOException;
 
 public class MainPresenterImpl implements MainPresenter{
 
@@ -41,6 +44,9 @@ public class MainPresenterImpl implements MainPresenter{
 
             @Override
             public int getImageWidth() {Log.d(LOG_TAG, "Dummy get width"); return 0;}
+
+            @Override
+            public void showToast(String s) {Log.d(LOG_TAG, "Dummy show toast"); }
         };
     }
 
@@ -66,5 +72,18 @@ public class MainPresenterImpl implements MainPresenter{
     @Override
     public void scheduleJob() {
 
+    }
+
+    @Override
+    public void setWallpaper() {
+        Bitmap bmp = mDataManager.getBitmapFromResource();
+        Point size = mDataManager.getScreenSize();
+        bmp = BitmapService.fitBitmapToSize(bmp, size.y, size.x);
+        try {
+            mDataManager.setWallpaper(bmp);
+        } catch (IOException e) {
+            e.printStackTrace();
+            mView.showToast("Can't set wallpaper due to error " + e.getMessage());
+        }
     }
 }

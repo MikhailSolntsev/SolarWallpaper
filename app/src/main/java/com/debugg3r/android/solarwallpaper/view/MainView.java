@@ -12,4 +12,6 @@ public interface MainView {
     int getImageHeight();
 
     int getImageWidth();
+
+    void showToast(String s);
 }

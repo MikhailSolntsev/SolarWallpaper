@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.debugg3r.android.solarwallpaper.R;
 import com.debugg3r.android.solarwallpaper.SolarApplication;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements MainView{
     MainPresenter mainPresenter;
 
     private ImageView mImageViewWall;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,13 +29,16 @@ public class MainActivity extends AppCompatActivity implements MainView{
 
         SolarApplication.getComponent().inject(this);
 
-        Button buttonSet = (Button) findViewById(R.id.button_set_wallpaper);
         mImageViewWall = (ImageView) findViewById(R.id.image_view_wall);
 
-        buttonSet.setOnClickListener(
+        Button buttonShow = (Button) findViewById(R.id.button_show_image);
+        buttonShow.setOnClickListener(
                 (view) -> {
                     mainPresenter.loadCurrentImage();
                 });
+
+        Button buttonSet = (Button) findViewById(R.id.button_set_wallpaper);
+        buttonSet.setOnClickListener((view) -> mainPresenter.setWallpaper());
     }
 
     @Override
@@ -65,13 +70,16 @@ public class MainActivity extends AppCompatActivity implements MainView{
 
     @Override
     public int getImageHeight() {
-        Log.d(LOG_TAG, "Image height: " + String.valueOf(mImageViewWall.getHeight()));
         return mImageViewWall.getHeight();
     }
 
     @Override
     public int getImageWidth() {
-        Log.d(LOG_TAG, "Image width: " + String.valueOf(mImageViewWall.getWidth()));
         return mImageViewWall.getWidth();
+    }
+
+    @Override
+    public void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT);
     }
 }

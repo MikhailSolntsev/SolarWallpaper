@@ -3,7 +3,11 @@ package com.debugg3r.android.solarwallpaper.model;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Point;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
+import android.view.WindowManager;
 
 public class BitmapService {
     private static final String LOG_TAG = "BITMAP_SERVICE";
@@ -26,4 +30,5 @@ public class BitmapService {
         return Bitmap.createScaledBitmap(bitmap, (int)(originHeight * scale), (int)(originWidth * scale), false);
 
     }
+
 }
