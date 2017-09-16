@@ -2,4 +2,47 @@
     <string name="app_name">SolarWallpaper</string>
     <string name="set_wallpaper">Set wallpaper</string>
     <string name="show_image">Show image</string>
+
+    <!-- Solar image type-->
+    <string name="type_aia_193" translatable="false">type_aia_193</string>
+    <string name="type_aia_304" translatable="false">type_aia_304</string>
+    <string name="type_aia_171" translatable="false">type_aia_171</string>
+    <string name="type_aia_211" translatable="false">type_aia_211</string>
+    <string name="type_aia_131" translatable="false">type_aia_131</string>
+    <string name="type_aia_335" translatable="false">type_aia_335</string>
+    <string name="type_aia_094" translatable="false">type_aia_094</string>
+    <string name="type_aia_1600" translatable="false">type_aia_1600</string>
+    <string name="type_aia_1700" translatable="false">type_aia_1700</string>
+    <string name="type_aia_211_193_171" translatable="false">type_aia_211_193_171</string>
+    <string name="type_aia_304_211_171" translatable="false">type_aia_304_211_171</string>
+    <string name="type_aia_094_335_193" translatable="false">type_aia_094_335_193</string>
+    <string name="type_aia_171_hmib" translatable="false">type_aia_171_hmib</string>
+
+    <string name="type_aia_193_title" translatable="false">AIA 193</string>
+    <string name="type_aia_304_title" translatable="false">AIA 304</string>
+    <string name="type_aia_171_title" translatable="false">AIA 171</string>
+    <string name="type_aia_211_title" translatable="false">AIA 211</string>
+    <string name="type_aia_131_title" translatable="false">AIA 131</string>
+    <string name="type_aia_335_title" translatable="false">AIA 335</string>
+    <string name="type_aia_094_title" translatable="false">AIA 094</string>
+    <string name="type_aia_1600_title" translatable="false">AIA 1600</string>
+    <string name="type_aia_1700_title" translatable="false">AIA 1700</string>
+    <string name="type_aia_211_193_171_title" translatable="false">AIA 211, 193, 171</string>
+    <string name="type_aia_304_211_171_title" translatable="false">AIA 304, 211, 171</string>
+    <string name="type_aia_094_335_193_title" translatable="false">AIA 094, 335, 193</string>
+    <string name="type_aia_171_hmib_title" translatable="false">AIA 171, HMIB</string>
+
+    <!-- Menu items -->
+
+    <string name="menu_settings_label">Settings</string>
+    <string name="menu_item_exit_label">Exit</string>
+
+    <!-- Preferences -->
+
+    <string name="pref_autosync_summary">Autosync with Solar Dynamic Observatory image server</string>
+    <string name="pref_autosync_title">Autosync image</string>
+    <string name="pref_autosync_interval_title">Autosync frequency</string>
+    <string name="pref_image_type_title">Image type</string>
+    <string name="pref_resolution_title">Image reolution</string>
+
 </resources>

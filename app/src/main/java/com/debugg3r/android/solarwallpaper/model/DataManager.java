@@ -14,9 +14,12 @@ import java.io.IOException;
 public class DataManager {
 
     private final Context mContext;
+    private SharedPreferencesHelper mSharedHelper;
 
     public DataManager(Context context) {
         this.mContext = context;
+
+        mSharedHelper = new SharedPreferencesHelper(mContext);
     }
 
     public Bitmap getBitmapFromResource() {
