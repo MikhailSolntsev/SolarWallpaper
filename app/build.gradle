@@ -51,6 +51,9 @@ dependencies {
     // OkHttp
     compile 'com.squareup.okhttp3:okhttp:3.9.0'
 
+    // Firebase
+    compile 'com.firebase:firebase-jobdispatcher:0.8.0'
+
     // Mockito
     testCompile "org.mockito:mockito-core:2.+"
 }

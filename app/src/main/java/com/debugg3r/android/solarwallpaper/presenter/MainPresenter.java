@@ -8,11 +8,9 @@ public interface MainPresenter {
 
     void attachView(@NonNull MainView view);
 
-    void deattachView();
+    void detachView();
 
     void loadCurrentImage();
-
-    void scheduleJob();
 
     void setWallpaper();
 }

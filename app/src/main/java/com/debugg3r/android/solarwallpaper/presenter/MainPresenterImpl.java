@@ -74,7 +74,7 @@ public class MainPresenterImpl implements MainPresenter {
     }
 
     @Override
-    public void deattachView() {
+    public void detachView() {
         mView = mDummyView;
     }
 
@@ -98,11 +98,6 @@ public class MainPresenterImpl implements MainPresenter {
                         throwable -> {mView.hideProgress();
                                 throw new NullPointerException(throwable.getMessage());},
                         () -> mView.hideProgress());
-    }
-
-    @Override
-    public void scheduleJob() {
-
     }
 
     @Override

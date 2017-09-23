@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity implements MainView{
 
     @Inject
     MainPresenter mainPresenter;
-    @Inject
-    SharedPreferencesHelper sharedPreferencesHelper;
+//    @Inject
+//    SharedPreferencesHelper sharedPreferencesHelper;
 
     private ImageView mImageViewWall;
 
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements MainView{
     @Override
     protected void onPause() {
         super.onPause();
-        mainPresenter.deattachView();
+        mainPresenter.detachView();
     }
 
     @Override

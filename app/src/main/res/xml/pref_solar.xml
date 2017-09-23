@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <SwitchPreference
-        android:key="pref_autosync"
+        android:key="@string/pref_autosync"
         android:defaultValue="false"
         android:summary="@string/pref_autosync_summary"
         android:title="@string/pref_autosync_title"
         />
     <ListPreference
-        android:key="pref_autosync_interval"
+        android:key="@string/pref_autosync_interval"
         android:defaultValue="180"
         android:entries="@array/pref_sync_frequency_titles"
         android:entryValues="@array/pref_sync_frequency_values"

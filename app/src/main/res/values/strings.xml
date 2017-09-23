@@ -47,5 +47,7 @@
 
     <string name="pref_image_type">image_type</string>
     <string name="pref_image_resolution">image_resolution</string>
+    <string name="pref_autosync">pref_autosync</string>
+    <string name="pref_autosync_interval">pref_autosync_interval</string>
 
 </resources>

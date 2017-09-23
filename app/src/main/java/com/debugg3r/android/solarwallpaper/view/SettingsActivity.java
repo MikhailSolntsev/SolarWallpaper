@@ -13,10 +13,16 @@ import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.debugg3r.android.solarwallpaper.R;
+import com.debugg3r.android.solarwallpaper.SolarApplication;
+import com.debugg3r.android.solarwallpaper.presenter.SettingsPresenter;
+
+import javax.inject.Inject;
 
 public class SettingsActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +47,15 @@ public class SettingsActivity extends AppCompatActivity {
 
     static public class SettingsFragment extends PreferenceFragment
             implements SettingsView, SharedPreferences.OnSharedPreferenceChangeListener {
+
+        @Inject
+        SettingsPresenter settingsPresenter;
+
         @Override
         public void onCreate(@Nullable Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+
+            SolarApplication.getComponent().inject(this);
 
             addPreferencesFromResource(R.xml.pref_solar);
 
@@ -59,16 +71,16 @@ public class SettingsActivity extends AppCompatActivity {
             }
         }
 
-        private void setPreferenceSummary(Preference pref, String value) {
-            if (pref instanceof ListPreference) {
-                // For list preferences, figure out the label of the selected value
-                ListPreference listPreference = (ListPreference) pref;
-                int prefIndex = listPreference.findIndexOfValue(value);
-                if (prefIndex >= 0) {
-                    // Set the summary to that label
-                    listPreference.setSummary(listPreference.getEntries()[prefIndex]);
-                }
-            }
+        @Override
+        public void onResume() {
+            super.onResume();
+            settingsPresenter.attachView(this);
+        }
+
+        @Override
+        public void onPause() {
+            super.onPause();
+            settingsPresenter.detachView();
         }
 
         @Override
@@ -78,13 +90,38 @@ public class SettingsActivity extends AppCompatActivity {
 
             super.onDestroy();
         }
-
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
             Preference preference = findPreference(key);
             if (preference != null) {
                 if (!(preference instanceof SwitchPreference)) {
                     setPreferenceSummary(preference, sharedPreferences.getString(key, ""));
+                }
+                String key_autosync= getString(R.string.pref_autosync);
+                String key_interval = getString(R.string.pref_autosync_interval);
+                if (key.equals(key_autosync) || key.equals(key_interval)) {
+                    boolean autosync = sharedPreferences.getBoolean(key_autosync, false);
+                    String freq = sharedPreferences.getString(key_interval, "-1");
+                    settingsPresenter.scheduleWallpaperUpdate(autosync, freq);
+                } else {
+                    settingsPresenter.updateWallpaper();
+                }
+            }
+        }
+
+        @Override
+        public void showToast(String text) {
+            Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT);
+        }
+
+        private void setPreferenceSummary(Preference pref, String value) {
+            if (pref instanceof ListPreference) {
+                // For list preferences, figure out the label of the selected value
+                ListPreference listPreference = (ListPreference) pref;
+                int prefIndex = listPreference.findIndexOfValue(value);
+                if (prefIndex >= 0) {
+                    // Set the summary to that label
+                    listPreference.setSummary(listPreference.getEntries()[prefIndex]);
                 }
             }
         }
