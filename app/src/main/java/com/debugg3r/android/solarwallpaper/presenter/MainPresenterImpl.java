@@ -10,7 +10,11 @@ import com.debugg3r.android.solarwallpaper.view.MainView;
 
 import java.io.IOException;
 
-public class MainPresenterImpl implements MainPresenter{
+import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
+public class MainPresenterImpl implements MainPresenter {
 
     private static final String LOG_TAG = "MAIN_PRESENTER";
     private DataManager mDataManager;
@@ -31,22 +35,36 @@ public class MainPresenterImpl implements MainPresenter{
     private MainView getDummyView() {
         return new MainView() {
             @Override
-            public void showProgress() {Log.d(LOG_TAG, "Dummy show progress");}
+            public void showProgress() {
+                Log.d(LOG_TAG, "Dummy show progress");
+            }
 
             @Override
-            public void hideProgress() {Log.d(LOG_TAG, "Dummy hide progress");}
+            public void hideProgress() {
+                Log.d(LOG_TAG, "Dummy hide progress");
+            }
 
             @Override
-            public void setImage(Bitmap image) {Log.d(LOG_TAG, "Dummy set image");}
+            public void setImage(Bitmap image) {
+                Log.d(LOG_TAG, "Dummy set image");
+            }
 
             @Override
-            public int getImageHeight() {Log.d(LOG_TAG, "Dummy get height"); return 0;}
+            public int getImageHeight() {
+                Log.d(LOG_TAG, "Dummy get height");
+                return 0;
+            }
 
             @Override
-            public int getImageWidth() {Log.d(LOG_TAG, "Dummy get width"); return 0;}
+            public int getImageWidth() {
+                Log.d(LOG_TAG, "Dummy get width");
+                return 0;
+            }
 
             @Override
-            public void showToast(String s) {Log.d(LOG_TAG, "Dummy show toast"); }
+            public void showToast(String s) {
+                Log.d(LOG_TAG, "Dummy show toast");
+            }
         };
     }
 
@@ -62,11 +80,24 @@ public class MainPresenterImpl implements MainPresenter{
 
     @Override
     public void loadCurrentImage() {
-        Bitmap bmp = mDataManager.getBitmapFromResource();
-        int height = mView.getImageHeight();
-        int width = mView.getImageWidth();
-        bmp = BitmapService.fitBitmapToSize(bmp, height, width);
-        mView.setImage(bmp);
+        mDataManager.getBitmapFromSdo()
+                .observeOn(Schedulers.computation())
+                .flatMap(bmp -> {
+                            int height = mView.getImageHeight();
+                            int width = mView.getImageWidth();
+                            bmp = BitmapService.fitBitmapToSize(bmp, height, width);
+                            return Observable.just(bmp);
+                        },
+                        throwable -> Observable.create(f -> f.onError(throwable)),
+                        () -> Observable.create(f -> f.onCompleted()))
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(bmp -> {
+                            mView.hideProgress();
+                            mView.setImage(bmp);
+                        },
+                        throwable -> {mView.hideProgress();
+                                throw new NullPointerException(throwable.getMessage());},
+                        () -> mView.hideProgress());
     }
 
     @Override
@@ -76,14 +107,21 @@ public class MainPresenterImpl implements MainPresenter{
 
     @Override
     public void setWallpaper() {
-        Bitmap bmp = mDataManager.getBitmapFromResource();
-        Point size = mDataManager.getScreenSize();
-        bmp = BitmapService.fitBitmapToSize(bmp, size.y, size.x);
-        try {
-            mDataManager.setWallpaper(bmp);
-        } catch (IOException e) {
-            e.printStackTrace();
-            mView.showToast("Can't set wallpaper due to error " + e.getMessage());
-        }
+        mDataManager.getBitmapFromSdo()
+                .subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.computation())
+                .map(bmp -> {
+                    Point size = mDataManager.getScreenSize();
+                    bmp = BitmapService.fitBitmapToSize(bmp, size.y, size.x);
+                    return bmp;
+                })
+                .subscribe(bmp -> {
+                    try {
+                        mDataManager.setWallpaper(bmp);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        mView.showToast("Can't set wallpaper due to error " + e.getMessage());
+                    }
+                });
     }
 }

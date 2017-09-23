@@ -8,8 +8,11 @@ import android.view.WindowManager;
 
 import com.debugg3r.android.solarwallpaper.R;
 import com.debugg3r.android.solarwallpaper.model.BitmapService;
+import com.debugg3r.android.solarwallpaper.model.loadservice.LoadServiceFactory;
 
 import java.io.IOException;
+
+import rx.Observable;
 
 public class DataManager {
 
@@ -24,6 +27,13 @@ public class DataManager {
 
     public Bitmap getBitmapFromResource() {
         return BitmapService.getBitmapFromResource(mContext, R.drawable.latest);
+    }
+
+    public Observable<Bitmap> getBitmapFromSdo() {
+        String type = mSharedHelper.getString(mContext.getString(R.string.pref_image_type));
+        String res = mSharedHelper.getString(mContext.getString(R.string.pref_image_resolution));
+//        return ImageLoadService.loadImage(type, res);
+        return LoadServiceFactory.getLoadService().loadImage(type, res);
     }
 
     public Point getScreenSize() {

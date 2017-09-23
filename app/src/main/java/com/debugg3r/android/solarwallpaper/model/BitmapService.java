@@ -9,11 +9,17 @@ import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
 
+import java.io.InputStream;
+
 public class BitmapService {
     private static final String LOG_TAG = "BITMAP_SERVICE";
 
     static public Bitmap getBitmapFromResource(Context mContext, int drawable) {
         return BitmapFactory.decodeResource(mContext.getResources(), drawable);
+    }
+
+    static public Bitmap getBitmapFromStream(InputStream inputStream) {
+        return BitmapFactory.decodeStream(inputStream);
     }
 
     public static Bitmap fitBitmapToSize(Bitmap bitmap, int height, int width) {

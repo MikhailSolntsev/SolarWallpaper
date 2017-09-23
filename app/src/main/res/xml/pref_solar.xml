@@ -17,17 +17,17 @@
         android:positiveButtonText="@null"
         />
     <ListPreference
-        android:key="pref_image_type"
+        android:key="@string/pref_image_type"
         android:defaultValue="@string/type_aia_171"
         android:entries="@array/pref_image_type_titles"
         android:entryValues="@array/pref_image_type_values"
         android:title="@string/pref_image_type_title"
         />
     <ListPreference
-        android:key="pref_resolution"
+        android:key="@string/pref_image_resolution"
         android:defaultValue="512"
         android:entries="@array/pref_image_resolution_titles"
         android:entryValues="@array/pref_image_resolution_values"
-        android:title="@string/pref_resolution_title"
+        android:title="@string/pref_image_resolution_title"
         />
 </PreferenceScreen>
