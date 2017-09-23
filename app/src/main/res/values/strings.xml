@@ -32,6 +32,11 @@
     <string name="type_aia_094_335_193_title" translatable="false">AIA 094, 335, 193</string>
     <string name="type_aia_171_hmib_title" translatable="false">AIA 171, HMIB</string>
 
+    <string name="interval_one_hour">1 hour</string>
+    <string name="interval_three_hours">3 hours</string>
+    <string name="interval_six_hours">6 hours</string>
+    <string name="interval_never">Never</string>
+
     <!-- Menu items -->
 
     <string name="menu_settings_label">Settings</string>

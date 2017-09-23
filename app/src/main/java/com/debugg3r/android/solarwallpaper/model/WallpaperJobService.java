@@ -38,6 +38,9 @@ public class WallpaperJobService extends JobService {
 
     @Override
     public boolean onStartJob(JobParameters job) {
+        if (dataManager == null) {
+            dataManager = new DataManager(this);
+        }
         dataManager.getBitmapFromSdo()
                 .subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.computation())

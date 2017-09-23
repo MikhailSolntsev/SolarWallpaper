@@ -46,6 +46,21 @@
         <item>@string/type_aia_094_335_193</item>
         <item>@string/type_aia_171_hmib</item>
     </string-array>
+    <array name="pref_image_type_previews">
+        <item>@drawable/latest_256_0193</item>
+        <item>@drawable/latest_256_0304</item>
+        <item>@drawable/latest_256_0171</item>
+        <item>@drawable/latest_256_0211</item>
+        <item>@drawable/latest_256_0131</item>
+        <item>@drawable/latest_256_0335</item>
+        <item>@drawable/latest_256_0094</item>
+        <item>@drawable/latest_256_1600</item>
+        <item>@drawable/latest_256_1700</item>
+        <item>@drawable/latest_256_211_193_171</item>
+        <item>@drawable/latest_256_304_211_171</item>
+        <item>@drawable/latest_256_094_335_193</item>
+        <item>@drawable/latest_256_171_hmib</item>
+    </array>
 
     <!-- Image resolution -->
     <string-array name="pref_image_resolution_titles">
@@ -58,8 +73,6 @@
         <item>1024</item>
         <item>2048</item>
     </string-array>
-    <string name="interval_one_hour">1 hour</string>
-    <string name="interval_three_hours">3 hours</string>
-    <string name="interval_six_hours">6 hours</string>
-    <string name="interval_never">Never</string>
+
+
 </resources>
