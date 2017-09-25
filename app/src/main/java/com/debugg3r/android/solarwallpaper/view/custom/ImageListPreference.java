@@ -39,6 +39,8 @@ public class ImageListPreference extends ListPreference {
 
     @Override
     protected void onPrepareDialogBuilder(AlertDialog.Builder builder) {
+        super.onPrepareDialogBuilder(builder);
+
         int index = findIndexOfValue(getSharedPreferences().getString(getKey(), "1"));
 
         ListAdapter adapter = new ImageListAdapter(getContext(), R.layout.image_list_preference_item,
@@ -63,13 +65,13 @@ public class ImageListPreference extends ListPreference {
                     }
                 });
 
-        super.onPrepareDialogBuilder(builder);
+        //super.onPrepareDialogBuilder(builder);
     }
 
     @Override
     protected void onDialogClosed(boolean positiveResult) {
         super.onDialogClosed(positiveResult);
-        CharSequence[] mEntryValues = getEntries();
+        CharSequence[] mEntryValues = getEntryValues();
         if (positiveResult && mClickedDialogEntryIndex >= 0 && mEntryValues != null) {
             String value = mEntryValues[mClickedDialogEntryIndex].toString();
             if (callChangeListener(value)) {

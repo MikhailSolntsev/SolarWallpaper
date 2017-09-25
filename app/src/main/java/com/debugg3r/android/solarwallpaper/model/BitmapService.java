@@ -1,6 +1,7 @@
 package com.debugg3r.android.solarwallpaper.model;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
@@ -8,6 +9,8 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
+
+import com.debugg3r.android.solarwallpaper.R;
 
 import java.io.InputStream;
 
@@ -37,4 +40,8 @@ public class BitmapService {
 
     }
 
+    public static Bitmap largeIcon(Context context) {
+        Resources resources = context.getResources();
+        return BitmapFactory.decodeResource(resources, R.drawable.ic_info_black_24dp);
+    }
 }

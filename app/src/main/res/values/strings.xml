@@ -48,11 +48,17 @@
     <string name="pref_autosync_title">Autosync image</string>
     <string name="pref_autosync_interval_title">Autosync frequency</string>
     <string name="pref_image_type_title">Image type</string>
-    <string name="pref_image_resolution_title">Image reolution</string>
+    <string name="pref_image_resolution_title">Image resolution</string>
 
     <string name="pref_image_type">image_type</string>
     <string name="pref_image_resolution">image_resolution</string>
     <string name="pref_autosync">pref_autosync</string>
     <string name="pref_autosync_interval">pref_autosync_interval</string>
+
+
+    <string name="notification_title">Solar wallpaper</string>
+    <string name="notification_body_ok">Solar photo has been updated</string>
+    <string name="notification_body_error">Solar wallpaper update error</string>
+    <string name="notification_body_empty">Wallpaper update is empty</string>
 
 </resources>

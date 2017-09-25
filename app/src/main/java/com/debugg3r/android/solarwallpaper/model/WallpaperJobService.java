@@ -20,6 +20,8 @@ import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
+import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 public class WallpaperJobService extends JobService {
@@ -37,25 +39,36 @@ public class WallpaperJobService extends JobService {
     }
 
     @Override
-    public boolean onStartJob(JobParameters job) {
+    public boolean onStartJob(final JobParameters job) {
         if (dataManager == null) {
             dataManager = new DataManager(this);
         }
         dataManager.getBitmapFromSdo()
                 .subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.computation())
-                .map(bmp -> {
+                .flatMap(bmp -> {
                     Point size = dataManager.getScreenSize();
                     bmp = BitmapService.fitBitmapToSize(bmp, size.y, size.x);
-                    return bmp;
-                })
+                    return Observable.just(bmp);
+                }
+                , throwable -> Observable.create(s -> s.onError(throwable))
+                        , () -> Observable.create(s -> s.onCompleted()))
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(bmp -> {
                     try {
                         dataManager.setWallpaper(bmp);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+
+                    dataManager.showNotification(1);
                     jobFinished(job, false);
+                }, throwable -> {
+                            dataManager.showNotification(2);
+                            jobFinished(job, false);}
+                , () -> {
+                            dataManager.showNotification(3);
+                            jobFinished(job, false);
                 });
         return true;
     }

@@ -117,6 +117,8 @@ public class MainPresenterImpl implements MainPresenter {
                         e.printStackTrace();
                         mView.showToast("Can't set wallpaper due to error " + e.getMessage());
                     }
+
+                    mDataManager.showNotification(1);
                 });
     }
 }
