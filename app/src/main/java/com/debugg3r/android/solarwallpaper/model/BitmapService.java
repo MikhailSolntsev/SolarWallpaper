@@ -42,6 +42,6 @@ public class BitmapService {
 
     public static Bitmap largeIcon(Context context) {
         Resources resources = context.getResources();
-        return BitmapFactory.decodeResource(resources, R.drawable.ic_info_black_24dp);
+        return BitmapFactory.decodeResource(resources, R.drawable.art_clear);
     }
 }

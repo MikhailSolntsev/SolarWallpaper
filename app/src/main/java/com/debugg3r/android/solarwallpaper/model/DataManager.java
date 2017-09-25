@@ -69,7 +69,7 @@ public class DataManager {
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(mContext);
         notificationBuilder.setAutoCancel(false)
                 .setColor(ContextCompat.getColor(mContext, R.color.colorPrimaryDark))
-                .setSmallIcon(R.drawable.art_clear)
+                .setSmallIcon(R.drawable.ic_clear)
                 .setLargeIcon(BitmapService.largeIcon(mContext))
                 .setContentTitle(mContext.getString(R.string.notification_title))
                 .setContentText(text)
