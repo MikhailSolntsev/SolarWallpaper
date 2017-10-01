@@ -16,7 +16,6 @@ import org.junit.runner.RunWith;
 
 import java.io.InputStream;
 import java.net.URL;
-import java.net.URLConnection;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -54,7 +53,7 @@ public class LoadServiceJellyTest {
 
     @Test
     public void getBitmap() {
-        Observable<Bitmap> observable = LoadServiceJelly.getInstance().loadImage(type, resolution);
+        Observable<Bitmap> observable = LoadServiceJelly.getInstance().loadImageObservable(type, resolution);
         Bitmap bmp = observable.toBlocking().first();
         assertNotNull("Bitmap is null", bmp);
     }

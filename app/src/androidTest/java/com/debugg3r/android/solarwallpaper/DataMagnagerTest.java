@@ -37,7 +37,7 @@ public class DataMagnagerTest {
 
     @Test
     public void getBitmapFromSdo_isCorrect() {
-        Observable<Bitmap> obs = mDataManager.getBitmapFromSdo();
+        Observable<Bitmap> obs = mDataManager.getBitmapFromSdoObservable();
         assertNotNull(obs);
         Bitmap bmp = obs.toBlocking().first();
         assertNotNull("Bitmap is null", bmp);
@@ -52,7 +52,7 @@ public class DataMagnagerTest {
 
     @Test
     public void setWallpaper_isCorrect() {
-//        Observable<Bitmap> obs = mDataManager.getBitmapFromSdo();
+//        Observable<Bitmap> obs = mDataManager.getBitmapFromSdoObservable();
 //        assertNotNull(obs);
 //        Bitmap bmp = obs.toBlocking().first();
 //        try {

@@ -1,7 +1,8 @@
 package com.debugg3r.android.solarwallpaper.model;
 
+import android.graphics.Bitmap;
 import android.graphics.Point;
-import android.provider.ContactsContract;
+import android.os.AsyncTask;
 
 import com.debugg3r.android.solarwallpaper.SolarApplication;
 import com.firebase.jobdispatcher.Constraint;
@@ -10,7 +11,6 @@ import com.firebase.jobdispatcher.GooglePlayDriver;
 import com.firebase.jobdispatcher.Job;
 import com.firebase.jobdispatcher.JobParameters;
 import com.firebase.jobdispatcher.JobService;
-import com.firebase.jobdispatcher.JobTrigger;
 import com.firebase.jobdispatcher.Lifetime;
 import com.firebase.jobdispatcher.RetryStrategy;
 import com.firebase.jobdispatcher.Trigger;
@@ -43,34 +43,76 @@ public class WallpaperJobService extends JobService {
         if (dataManager == null) {
             dataManager = new DataManager(this);
         }
-        dataManager.getBitmapFromSdo()
+
+        //setWallpaperObservable(job);
+
+        setWallpaperAsync(job);
+
+        return true;
+
+    }
+
+    private void setWallpaperAsync(final JobParameters job) {
+        AsyncTask task = new AsyncTask() {
+            @Override
+            protected Object doInBackground(Object[] params) {
+                Bitmap bmp = dataManager.getBitmapFromSdoSync();
+                if (bmp == null) {
+                    Throwable throwable = new NullPointerException("bmp is null");
+                    dataManager.showErrorNotification(throwable);
+                    //throw throwable;
+                }
+
+                Point size = dataManager.getScreenSize();
+                bmp = BitmapService.fitBitmapToSize(bmp, size.y, size.x);
+
+                try {
+                    dataManager.setWallpaper(bmp);
+                } catch (IOException e) {
+                    dataManager.showErrorNotification(e);
+                    e.printStackTrace();
+                }
+
+                dataManager.showNotification(1);
+
+                jobFinished(job, false);
+
+                return null;
+            }
+        };
+
+        task.execute();
+    }
+
+    private void setWallpaperObservable(final JobParameters job) {
+        dataManager.getBitmapFromSdoObservable()
                 .subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.computation())
                 .flatMap(bmp -> {
-                    Point size = dataManager.getScreenSize();
-                    bmp = BitmapService.fitBitmapToSize(bmp, size.y, size.x);
-                    return Observable.just(bmp);
-                }
-                , throwable -> Observable.create(s -> s.onError(throwable))
+                            Point size = dataManager.getScreenSize();
+                            bmp = BitmapService.fitBitmapToSize(bmp, size.y, size.x);
+                            return Observable.just(bmp);
+                        }
+                        , throwable -> Observable.create(s -> s.onError(throwable))
                         , () -> Observable.create(s -> s.onCompleted()))
-                .observeOn(AndroidSchedulers.mainThread())
+                //.observeOn(AndroidSchedulers.mainThread())
                 .subscribe(bmp -> {
-                    try {
-                        dataManager.setWallpaper(bmp);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                            try {
+                                dataManager.setWallpaper(bmp);
+                            } catch (IOException e) {
+                                dataManager.showErrorNotification(e);
+                                e.printStackTrace();
+                            }
 
-                    dataManager.showNotification(1);
-                    jobFinished(job, false);
-                }, throwable -> {
-                            dataManager.showNotification(2);
+                            dataManager.showNotification(1);
+                            jobFinished(job, false);
+                        }, throwable -> {
+                            dataManager.showErrorNotification(throwable);
                             jobFinished(job, false);}
-                , () -> {
+                        , () -> {
                             dataManager.showNotification(3);
                             jobFinished(job, false);
-                });
-        return true;
+                        });
     }
 
     @Override

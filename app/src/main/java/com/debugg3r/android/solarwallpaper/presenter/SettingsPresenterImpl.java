@@ -1,7 +1,6 @@
 package com.debugg3r.android.solarwallpaper.presenter;
 
 import android.graphics.Point;
-import android.provider.ContactsContract;
 
 import com.debugg3r.android.solarwallpaper.model.BitmapService;
 import com.debugg3r.android.solarwallpaper.model.DataManager;
@@ -49,7 +48,7 @@ public class SettingsPresenterImpl implements SettingsPresenter {
 
     @Override
     public void updateWallpaper() {
-        mDataManager.getBitmapFromSdo()
+        mDataManager.getBitmapFromSdoObservable()
                 .subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.computation())
                 .map(bmp -> {

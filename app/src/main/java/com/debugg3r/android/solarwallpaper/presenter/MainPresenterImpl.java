@@ -80,7 +80,7 @@ public class MainPresenterImpl implements MainPresenter {
 
     @Override
     public void loadCurrentImage() {
-        mDataManager.getBitmapFromSdo()
+        mDataManager.getBitmapFromSdoObservable()
                 .observeOn(Schedulers.computation())
                 .flatMap(bmp -> {
                             int height = mView.getImageHeight();
@@ -102,7 +102,7 @@ public class MainPresenterImpl implements MainPresenter {
 
     @Override
     public void setWallpaper() {
-        mDataManager.getBitmapFromSdo()
+        mDataManager.getBitmapFromSdoObservable()
                 .subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.computation())
                 .map(bmp -> {
