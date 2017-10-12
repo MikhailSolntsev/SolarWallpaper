@@ -29,6 +29,8 @@ public class WallpaperJobService extends JobService {
     private static String JOB_TAG = "SolarWallpaperUpdater";
     private static boolean isScheduled = false;
 
+    private AsyncTask<Void, Void, Void> mWallapaperTask;
+
     @Inject
     DataManager dataManager;
 
@@ -44,18 +46,9 @@ public class WallpaperJobService extends JobService {
             dataManager = new DataManager(this);
         }
 
-        //setWallpaperObservable(job);
-
-        setWallpaperAsync(job);
-
-        return true;
-
-    }
-
-    private void setWallpaperAsync(final JobParameters job) {
-        AsyncTask task = new AsyncTask() {
+        mWallapaperTask = new AsyncTask<Void, Void, Void>() {
             @Override
-            protected Object doInBackground(Object[] params) {
+            protected Void doInBackground(Void[] params) {
                 Bitmap bmp = dataManager.getBitmapFromSdoSync();
                 if (bmp == null) {
                     Throwable throwable = new NullPointerException("bmp is null");
@@ -73,51 +66,31 @@ public class WallpaperJobService extends JobService {
                     e.printStackTrace();
                 }
 
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void o) {
+                super.onPostExecute(o);
+
                 dataManager.showNotification(1);
 
                 jobFinished(job, false);
-
-                return null;
             }
         };
 
-        task.execute();
-    }
+        mWallapaperTask.execute();
 
-    private void setWallpaperObservable(final JobParameters job) {
-        dataManager.getBitmapFromSdoObservable()
-                .subscribeOn(Schedulers.io())
-                .observeOn(Schedulers.computation())
-                .flatMap(bmp -> {
-                            Point size = dataManager.getScreenSize();
-                            bmp = BitmapService.fitBitmapToSize(bmp, size.y, size.x);
-                            return Observable.just(bmp);
-                        }
-                        , throwable -> Observable.create(s -> s.onError(throwable))
-                        , () -> Observable.create(s -> s.onCompleted()))
-                //.observeOn(AndroidSchedulers.mainThread())
-                .subscribe(bmp -> {
-                            try {
-                                dataManager.setWallpaper(bmp);
-                            } catch (IOException e) {
-                                dataManager.showErrorNotification(e);
-                                e.printStackTrace();
-                            }
+        return true;
 
-                            dataManager.showNotification(1);
-                            jobFinished(job, false);
-                        }, throwable -> {
-                            dataManager.showErrorNotification(throwable);
-                            jobFinished(job, false);}
-                        , () -> {
-                            dataManager.showNotification(3);
-                            jobFinished(job, false);
-                        });
     }
 
     @Override
     public boolean onStopJob(JobParameters job) {
-        return false;
+        if (mWallapaperTask != null) {
+            mWallapaperTask.cancel(true);
+        }
+        return true;
     }
 
     public static boolean scheduleJob(boolean active, int interval) {
