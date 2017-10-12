@@ -34,11 +34,18 @@ public class DataManager {
         return BitmapService.getBitmapFromResource(mContext, R.drawable.latest);
     }
 
-    public Observable<Bitmap> getBitmapFromSdo() {
+    public Observable<Bitmap> getBitmapFromSdoObservable() {
         String type = mSharedHelper.getString(mContext.getString(R.string.pref_image_type));
         String res = mSharedHelper.getString(mContext.getString(R.string.pref_image_resolution));
-//        return ImageLoadService.loadImage(type, res);
-        return LoadServiceFactory.getLoadService().loadImage(type, res);
+//        return ImageLoadService.loadImageObservable(type, res);
+        return LoadServiceFactory.getLoadService().loadImageObservable(type, res);
+    }
+
+    public Bitmap getBitmapFromSdoSync(){
+        String type = mSharedHelper.getString(mContext.getString(R.string.pref_image_type));
+        String res = mSharedHelper.getString(mContext.getString(R.string.pref_image_resolution));
+//        return ImageLoadService.loadImageObservable(type, res);
+        return LoadServiceFactory.getLoadService().loadImageSync(type, res);
     }
 
     public Point getScreenSize() {
@@ -89,4 +96,29 @@ public class DataManager {
 
     }
 
+    public void showErrorNotification(Throwable throwable) {
+        String text;
+        text = throwable.getMessage();
+
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(mContext);
+        notificationBuilder.setAutoCancel(false)
+                .setColor(ContextCompat.getColor(mContext, R.color.colorPrimaryDark))
+                .setSmallIcon(R.drawable.ic_clear)
+                .setLargeIcon(BitmapService.largeIcon(mContext))
+                .setContentTitle(mContext.getString(R.string.notification_title))
+                .setContentText(text)
+                .setStyle(new NotificationCompat.BigTextStyle()
+                        .bigText(text))
+                .setDefaults(Notification.DEFAULT_VIBRATE)
+                //.setContentIntent(contentIntent(mContext))
+                .setAutoCancel(true);
+
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN)
+            notificationBuilder.setPriority(Notification.PRIORITY_HIGH);
+
+        NotificationManager notificationManager = (NotificationManager) mContext
+                .getSystemService(Context.NOTIFICATION_SERVICE);
+
+        notificationManager.notify(PENDING_INTENT_NOTIFICATION, notificationBuilder.build());
+    }
 }

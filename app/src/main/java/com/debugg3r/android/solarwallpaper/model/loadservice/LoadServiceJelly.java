@@ -28,7 +28,7 @@ public class LoadServiceJelly extends LoadService {
     }
 
     @Override
-    public Observable<Bitmap> loadImage(String type, String res) {
+    public Observable<Bitmap> loadImageObservable(String type, String res) {
         String imageUrl = getImageUrl(type, res);
 
         Observable<Bitmap> result = Observable.just(imageUrl)
@@ -71,5 +71,43 @@ public class LoadServiceJelly extends LoadService {
                         }, throwable -> Observable.create(subscriber -> subscriber.onError(throwable))
                         , () -> Observable.create(subscriber -> subscriber.onCompleted()));
         return result;
+    }
+
+    @Override
+    public Bitmap loadImageSync(String type, String res) {
+
+        String urlString = getImageUrl(type, res);
+
+        // get url
+        URL url;
+        try {
+            url = new URL(urlString);
+        } catch (MalformedURLException ex) {
+            return null;//Observable.create(subscriber -> subscriber.onError(ex));
+        }
+
+        // get connection
+        HttpsURLConnection urlConnection;
+        try {
+            // get request
+            urlConnection = (HttpsURLConnection) url.openConnection();
+        } catch (IOException ex) {
+            return null;//Observable.create(subscriber -> subscriber.onError(ex));
+        }
+        urlConnection.setSSLSocketFactory(new MySslSocketFactory(urlConnection.getSSLSocketFactory()));
+
+        // get response
+        InputStream in;
+        try {
+            // get data from response
+            in = urlConnection.getInputStream();
+        } catch (IOException ex) {
+            return null;//Observable.create(subscriber -> subscriber.onError(ex));
+        }
+
+        // create bitmap
+        Bitmap bmp = BitmapFactory.decodeStream(in);
+
+        return bmp;
     }
 }

@@ -3,13 +3,16 @@ package com.debugg3r.android.solarwallpaper.view;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.debugg3r.android.solarwallpaper.R;
@@ -25,10 +28,9 @@ public class MainActivity extends AppCompatActivity implements MainView{
 
     @Inject
     MainPresenter mainPresenter;
-//    @Inject
-//    SharedPreferencesHelper sharedPreferencesHelper;
 
     private ImageView mImageViewWall;
+    private ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements MainView{
 
         Button buttonSet = (Button) findViewById(R.id.button_set_wallpaper);
         buttonSet.setOnClickListener((view) -> mainPresenter.setWallpaper());
+
+        mProgressBar = (ProgressBar) findViewById(R.id.loading_progress_bar);
 
     }
 
@@ -81,12 +85,12 @@ public class MainActivity extends AppCompatActivity implements MainView{
 
     @Override
     public void showProgress() {
-
+        mProgressBar.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideProgress() {
-
+        mProgressBar.setVisibility(View.GONE);
     }
 
     @Override

@@ -107,7 +107,7 @@ public class MainPresenterTest {
             }
 
             @Override
-            public Observable<Bitmap> getBitmapFromSdo() {
+            public Observable<Bitmap> getBitmapFromSdoObservable() {
                 return Observable.just(mBitmap);
             }
         };

@@ -73,7 +73,7 @@ public class LoadServiceKit extends LoadService {
     }
 
     @Override
-    public Observable<Bitmap> loadImage(String type, String res) {
+    public Observable<Bitmap> loadImageObservable(String type, String res) {
         String imageUrl = LoadService.getImageUrl(type, res);
         return Observable.just(imageUrl)
                 .observeOn(Schedulers.io())
@@ -109,5 +109,10 @@ public class LoadServiceKit extends LoadService {
                         () -> Observable.create(f -> f.onCompleted())
                 );
 
+    }
+
+    @Override
+    public Bitmap loadImageSync(String type, String res) {
+        return null;
     }
 }
