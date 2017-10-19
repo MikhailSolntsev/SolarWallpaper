@@ -12,5 +12,9 @@ public interface MainPresenter {
 
     void loadCurrentImage();
 
+    void showCurrentImage();
+
     void setWallpaper();
+
+    String checkLoadedType(String imageType);
 }

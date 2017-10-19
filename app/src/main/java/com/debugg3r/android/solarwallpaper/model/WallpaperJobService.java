@@ -49,7 +49,16 @@ public class WallpaperJobService extends JobService {
         mWallapaperTask = new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void[] params) {
-                Bitmap bmp = dataManager.getBitmapFromSdoSync();
+                Bitmap bmp = null;
+                try {
+                    bmp = dataManager.getBitmapFromSdoSync();
+                } catch (Exception ex) {
+                    dataManager.showErrorNotification(ex);
+                    return null;
+                } catch (Error er) {
+                    dataManager.showErrorNotification(er);
+                    return null;
+                }
                 if (bmp == null) {
                     Throwable throwable = new NullPointerException("bmp is null");
                     dataManager.showErrorNotification(throwable);
@@ -61,6 +70,7 @@ public class WallpaperJobService extends JobService {
 
                 try {
                     dataManager.setWallpaper(bmp);
+                    dataManager.showNotification(1);
                 } catch (IOException e) {
                     dataManager.showErrorNotification(e);
                     e.printStackTrace();
@@ -71,9 +81,9 @@ public class WallpaperJobService extends JobService {
 
             @Override
             protected void onPostExecute(Void o) {
-                super.onPostExecute(o);
-
-                dataManager.showNotification(1);
+//                super.onPostExecute(o);
+//
+//                dataManager.showNotification(1);
 
                 jobFinished(job, false);
             }

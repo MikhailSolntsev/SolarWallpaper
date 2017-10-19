@@ -1,6 +1,7 @@
 package com.debugg3r.android.solarwallpaper.view;
 
 import android.graphics.Bitmap;
+import android.graphics.Point;
 
 public interface MainView {
     void showProgress();
@@ -9,9 +10,7 @@ public interface MainView {
 
     void setImage(Bitmap image);
 
-    int getImageHeight();
-
-    int getImageWidth();
+    Point getImageSize();
 
     void showToast(String s);
 }

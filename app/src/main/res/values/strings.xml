@@ -60,5 +60,6 @@
     <string name="notification_body_ok">Solar photo has been updated</string>
     <string name="notification_body_error">Solar wallpaper update error</string>
     <string name="notification_body_empty">Wallpaper update is empty</string>
+    <string name="pref_stored_image">stored_image_file_name</string>
 
 </resources>

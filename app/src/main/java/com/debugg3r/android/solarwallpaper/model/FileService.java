@@ -15,7 +15,7 @@ public class FileService {
 
     private static final String LOG_TAG = "FILE_SERVICE";
 
-    public static File getOutputMediaFile(){
+    public static File getOutputMediaFile(String imageType){
         // To be safe, you should check that the SDCard is mounted
         // using Environment.getExternalStorageState() before doing this.
 
@@ -33,17 +33,16 @@ public class FileService {
         }
 
         // Create a media file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         File mediaFile;
         mediaFile = new File(mediaStorageDir.getPath() + File.separator +
-                    "IMG_"+ timeStamp + ".jpg");
+                    "IMG_"+ imageType + ".jpg");
 
         return mediaFile;
     }
 
     public static void onPictureTaken(byte[] data) {
 
-        File pictureFile = getOutputMediaFile();
+        File pictureFile = getOutputMediaFile("picture");
         if (pictureFile == null){
             Log.d(LOG_TAG, "Error creating media file, check storage permissions: " +
 //                        e.getMessage());

@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
@@ -17,9 +17,17 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/debugg3r/android/solarwallpaper/MainPresenterTest.java" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/debugg3r/android/solarwallpaper/MainPresenterTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/BitmapService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/BitmapService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/DataManager.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/DataManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/FileService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/FileService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/WallpaperJobService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/WallpaperJobService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenterImpl.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenterImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <ignored path="SolarWallpaper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,14 +62,25 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state relative-caret-position="430">
+              <caret line="111" column="30" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
               <folding>
+                <element signature="e#2076#2111#0" expanded="true" />
+                <element signature="e#2379#2414#0" expanded="true" />
+                <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BitmapService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/BitmapService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,23 +88,31 @@
       <file leaf-file-name="MainPresenterImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenterImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+            <state relative-caret-position="126">
+              <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
               <folding>
                 <element signature="method#MainPresenterImpl#0;class#MainPresenterImpl#0" expanded="false" />
-                <element signature="method#loadCurrentImage#0;class#MainPresenterImpl#0" expanded="false" />
+                <element signature="e#814#815#0" expanded="true" />
+                <element signature="e#850#851#0" expanded="true" />
                 <element signature="method#setWallpaper#0;class#MainPresenterImpl#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainView.java">
+      <file leaf-file-name="DataManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/DataManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-              <folding />
+            <state relative-caret-position="312">
+              <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+              <folding>
+                <element signature="e#2077#2123#0" expanded="true" />
+                <element signature="e#2898#2944#0" expanded="true" />
+                <element signature="method#getScreenSize#0;class#DataManager#0" expanded="false" />
+                <element signature="method#setWallpaper#0;class#DataManager#0" expanded="false" />
+                <element signature="method#showNotification#0;class#DataManager#0" expanded="false" />
+                <element signature="method#showErrorNotification#0;class#DataManager#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1997,7 +2024,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/SolarApplication.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/dagger/ApplicationModule.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/com/debugg3r/android/solarwallpaper/BitmapServiceTest.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/SharedPreferencesHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/dagger/DataModule.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/pref_general.xml" />
@@ -2008,7 +2034,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/sdoimager/Aia193Imager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/sdoimager/SdoImagerFactory.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/com/debugg3r/android/solarwallpaper/MainPresenterTest.java" />
-        <option value="$PROJECT_DIR$/app/src/androidTest/java/com/debugg3r/android/solarwallpaper/MainPresenterTest.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/com/debugg3r/android/solarwallpaper/ExampleInstrumentedTest.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/com/debugg3r/android/solarwallpaper/ImageLoaderUnitTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/ImageLoadService.java" />
@@ -2018,7 +2043,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/MySslSocketFactory.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceFactory.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/SettingsView.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/dagger/ApplicationComponent.java" />
@@ -2033,14 +2057,17 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/image_list_preference_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/custom/ImageListPreference.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/BitmapService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/DataManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceKit.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceJelly.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/com/debugg3r/android/solarwallpaper/LoadServiceJellyTest.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/WallpaperJobService.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/WallpaperJobService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/BitmapService.java" />
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/com/debugg3r/android/solarwallpaper/MainPresenterTest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceJelly.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/DataManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/FileService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenterImpl.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainActivity.java" />
@@ -2078,8 +2105,61 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane />
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SolarWallpaper" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SolarWallpaper" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SolarWallpaper" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SolarWallpaper" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="solarwallpaper" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="PackagesPane">
         <subPane />
@@ -2130,75 +2210,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SolarWallpaper" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SolarWallpaper" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SolarWallpaper" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SolarWallpaper" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="solarwallpaper" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SolarWallpaper" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+      <pane id="ProjectPane">
+        <subPane />
       </pane>
       <pane id="Scratches" />
     </panes>
@@ -2208,7 +2221,7 @@
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="device.picker.selection" value="0123456789ABCDEF" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../metronome-android-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ud851-Exercises-student/Lesson10-Hydration-Reminder/T10.06-Exercise-StickyBroadcastForCharging" />
     <property name="DEBUGGABLE_DEVICE" value="jiayu-jy_g3-0123456789ABCDEF" />
     <property name="DEBUGGABLE_PROCESS" value="com.debugg3r.android.solarwallpaper" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
@@ -2878,7 +2891,6 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6984668" sideWeight="0.49394855" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40715504" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
@@ -2890,7 +2902,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39929947" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3492334" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2898,6 +2910,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -2922,7 +2935,7 @@
           <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="28" />
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="app">
@@ -2931,13 +2944,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/Assert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.8/7d96d6ca9fa1e45df8c4333666b2d849822140ab/rxjava-1.1.8-sources.jar!/rx/Observable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
@@ -2967,13 +2973,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
           <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -3148,32 +3147,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceKit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="115" column="8" selection-start-line="115" selection-start-column="8" selection-end-line="115" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="31" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceJelly.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3210,41 +3187,71 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="580" column="36" selection-start-line="580" selection-start-column="36" selection-end-line="580" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/FileService.java">
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/com/debugg3r/android/solarwallpaper/MainPresenterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="918">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="e#2156#2157#0" expanded="false" />
+            <element signature="e#2210#2211#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+          <folding>
+            <element signature="method#getImageUrl#0;class#LoadService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/WallpaperJobService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="43" column="55" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
+          <folding>
+            <element signature="method#onStartJob#0;class#WallpaperJobService#0" expanded="false" />
+            <element signature="method#onStopJob#0;class#WallpaperJobService#0" expanded="false" />
+            <element signature="method#scheduleJob#0;class#WallpaperJobService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceKit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="115" column="8" selection-start-line="115" selection-start-column="8" selection-end-line="115" selection-end-column="20" />
+          <folding>
+            <element signature="method#getUnsafeOkHttpClient#0;class#LoadServiceKit#0" expanded="false" />
+            <element signature="e#4509#4510#0" expanded="false" />
+            <element signature="e#4536#4537#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceJelly.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="822">
+          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/BitmapService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/WallpaperJobService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/DataManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+        <state relative-caret-position="312">
+          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
           <folding>
+            <element signature="e#2077#2123#0" expanded="true" />
+            <element signature="e#2898#2944#0" expanded="true" />
             <element signature="method#getScreenSize#0;class#DataManager#0" expanded="false" />
             <element signature="method#setWallpaper#0;class#DataManager#0" expanded="false" />
             <element signature="method#showNotification#0;class#DataManager#0" expanded="false" />
@@ -3253,35 +3260,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/FileService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        <state relative-caret-position="204">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenterImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+        <state relative-caret-position="126">
+          <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
           <folding>
             <element signature="method#MainPresenterImpl#0;class#MainPresenterImpl#0" expanded="false" />
-            <element signature="method#loadCurrentImage#0;class#MainPresenterImpl#0" expanded="false" />
+            <element signature="e#814#815#0" expanded="true" />
+            <element signature="e#850#851#0" expanded="true" />
             <element signature="method#setWallpaper#0;class#MainPresenterImpl#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/BitmapService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        <state relative-caret-position="430">
+          <caret line="111" column="30" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
           <folding>
+            <element signature="e#2076#2111#0" expanded="true" />
+            <element signature="e#2379#2414#0" expanded="true" />
+            <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>

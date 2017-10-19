@@ -20,10 +20,6 @@ public class MainPresenterImpl implements MainPresenter {
     private DataManager mDataManager;
     private MainView mView;
 
-    private MainView getView() {
-        return mView;
-    }
-
     public MainPresenterImpl(DataManager mDataManager) {
         this.mDataManager = mDataManager;
         mView = null;
@@ -49,9 +45,8 @@ public class MainPresenterImpl implements MainPresenter {
         mDataManager.getBitmapFromSdoObservable()
                 .observeOn(Schedulers.computation())
                 .flatMap(bmp -> {
-                            int height = mView.getImageHeight();
-                            int width = mView.getImageWidth();
-                            bmp = BitmapService.fitBitmapToSize(bmp, height, width);
+                            Point point = mView.getImageSize();
+                            bmp = BitmapService.fitBitmapToSize(bmp, point.x, point.y);
                             return Observable.just(bmp);
                         },
                         throwable -> Observable.create(f -> f.onError(throwable)),
@@ -67,6 +62,22 @@ public class MainPresenterImpl implements MainPresenter {
     }
 
     @Override
+    public void showCurrentImage() {
+        // 1. look for saved picture
+        String filename = mDataManager.getStoredImageFilename();
+        if (filename.isEmpty()) {
+            loadCurrentImage();
+        } else {
+            // 2. if it is present, load it
+            mDataManager.getBitmapFromFile(filename)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(Schedulers.io())
+                    // 3. set image
+                    .subscribe(bmp -> mView.setImage(bmp));
+        }
+    }
+
+    @Override
     public void setWallpaper() {
         mDataManager.getBitmapFromSdoObservable()
                 .subscribeOn(Schedulers.io())
@@ -79,12 +90,22 @@ public class MainPresenterImpl implements MainPresenter {
                 .subscribe(bmp -> {
                     try {
                         mDataManager.setWallpaper(bmp);
+
                     } catch (IOException e) {
                         e.printStackTrace();
-                        mView.showToast("Can't set wallpaper due to error " + e.getMessage());
+                        if (isViewAttached()) {
+                            mView.showToast("Can't set wallpaper due to error " + e.getMessage());
+                        }
                     }
 
                     mDataManager.showNotification(1);
                 });
     }
+
+    @Override
+    public String checkLoadedType(String imageType) {
+        String newType = "";
+        return newType;
+    }
+
 }

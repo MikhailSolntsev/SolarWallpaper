@@ -71,13 +71,8 @@ public class MainPresenterTest {
             }
 
             @Override
-            public int getImageHeight() {
-                return 64;
-            }
-
-            @Override
-            public int getImageWidth() {
-                return 64;
+            public Point getImageSize() {
+                return new Point(1, 1);
             }
 
             @Override

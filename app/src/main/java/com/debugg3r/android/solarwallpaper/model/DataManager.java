@@ -5,16 +5,22 @@ import android.app.NotificationManager;
 import android.app.WallpaperManager;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.BitmapCompat;
 import android.view.WindowManager;
 
 import com.debugg3r.android.solarwallpaper.R;
 import com.debugg3r.android.solarwallpaper.model.loadservice.LoadServiceFactory;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 
 import rx.Observable;
 
@@ -37,15 +43,41 @@ public class DataManager {
     public Observable<Bitmap> getBitmapFromSdoObservable() {
         String type = mSharedHelper.getString(mContext.getString(R.string.pref_image_type));
         String res = mSharedHelper.getString(mContext.getString(R.string.pref_image_resolution));
-//        return ImageLoadService.loadImageObservable(type, res);
-        return LoadServiceFactory.getLoadService().loadImageObservable(type, res);
+        Observable<Bitmap> bmpObservable = LoadServiceFactory.getLoadService().loadImageObservable(type, res);
+        bmpObservable.doOnNext(bmp ->{
+            OutputStream fout = null;
+            File file = FileService.getOutputMediaFile(type);
+            try {
+                fout = new FileOutputStream(file);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            if (fout != null) {
+                bmp.compress(Bitmap.CompressFormat.PNG, 95, fout);
+                mSharedHelper.putString(mContext.getString(R.string.pref_stored_image), file.getAbsolutePath());
+            }
+        });
+        return bmpObservable;
     }
 
     public Bitmap getBitmapFromSdoSync(){
         String type = mSharedHelper.getString(mContext.getString(R.string.pref_image_type));
         String res = mSharedHelper.getString(mContext.getString(R.string.pref_image_resolution));
-//        return ImageLoadService.loadImageObservable(type, res);
-        return LoadServiceFactory.getLoadService().loadImageSync(type, res);
+
+        Bitmap bmp = LoadServiceFactory.getLoadService().loadImageSync(type, res);
+
+        OutputStream fout = null;
+        File file = FileService.getOutputMediaFile(type);
+        try {
+            fout = new FileOutputStream(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        if (fout != null) {
+            bmp.compress(Bitmap.CompressFormat.PNG, 95, fout);
+            mSharedHelper.putString(mContext.getString(R.string.pref_stored_image), file.getAbsolutePath());
+        }
+        return bmp;
     }
 
     public Point getScreenSize() {
@@ -120,5 +152,13 @@ public class DataManager {
                 .getSystemService(Context.NOTIFICATION_SERVICE);
 
         notificationManager.notify(PENDING_INTENT_NOTIFICATION, notificationBuilder.build());
+    }
+
+    public String getStoredImageFilename() {
+        return mSharedHelper.getString(mContext.getString(R.string.pref_stored_image));
+    }
+
+    public Observable<Bitmap> getBitmapFromFile(String filename) {
+        return Observable.just(BitmapService.getBitmapFromFile(filename));
     }
 }

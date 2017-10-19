@@ -44,4 +44,9 @@ public class BitmapService {
         Resources resources = context.getResources();
         return BitmapFactory.decodeResource(resources, R.drawable.art_clear);
     }
+
+
+    public static Bitmap getBitmapFromFile(String filename) {
+        return BitmapFactory.decodeFile(filename);
+    }
 }
