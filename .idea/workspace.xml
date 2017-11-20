@@ -9,85 +9,23 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="129a99b7-de99-4ff1-a8e4-7925933393e4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_25_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_25_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/constraint_layout_1_0_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/constraint_layout_solver_1_0_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/dagger_2_10.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/gradle_retrolambda_3_7_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_core_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_integration_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_library_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/javawriter_2_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/javax_annotation_api_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/javax_inject_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jsr305_2_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/rxandroid_1_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/rxjava_1_1_8.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_25_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_compat_25_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_ui_25_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_utils_25_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_fragment_25_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_media_compat_25_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_25_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_25_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-06-23-03-09-452.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-06-23-03-18-465.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-06-23-41-04-568.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-06-23-41-54-620.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-06-23-42-38-741.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-06-23-48-02-875.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-06-23-54-32-814.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-06-23-54-41-156.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-07-00-03-29-873.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-07-00-05-35-897.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-07-00-05-40-473.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-07-00-07-38-777.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-07-00-10-53-205.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-07-20-31-36-210.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-07-20-32-04-240.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-07-20-44-42-316.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-07-20-45-08-034.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-07-20-46-56-617.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-07-20-51-01-828.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-07-20-54-12-642.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-07-20-54-55-752.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-09-07-20-59-44-257.rawproto" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/debugg3r/android/solarwallpaper/DataMagnagerTest.java" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/debugg3r/android/solarwallpaper/DataMagnagerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/debugg3r/android/solarwallpaper/LoadServiceJellyTest.java" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/debugg3r/android/solarwallpaper/LoadServiceJellyTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/WallpaperJobService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/WallpaperJobService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/SharedPreferencesHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/SharedPreferencesHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceFactory.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceJelly.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceJelly.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceKit.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceKit.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenterImpl.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenterImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/SettingsPresenter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/SettingsPresenter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle.properties" afterPath="$PROJECT_DIR$/gradle.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainView.java" />
     </list>
     <ignored path="SolarWallpaper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -160,26 +98,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="161" column="1" lean-forward="true" selection-start-line="161" selection-start-column="1" selection-end-line="161" selection-end-column="1" />
+            <state relative-caret-position="-340">
+              <caret line="30" column="71" lean-forward="false" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2285#2320#0" expanded="true" />
-                <element signature="e#2412#2413#0" expanded="true" />
-                <element signature="e#2460#2461#0" expanded="true" />
-                <element signature="e#2550#2551#0" expanded="true" />
-                <element signature="e#2594#2595#0" expanded="true" />
-                <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#2855#2890#0" expanded="true" />
-                <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#1579#1580#0" expanded="true" />
+                <element signature="e#1627#1628#0" expanded="true" />
+                <element signature="e#1717#1718#0" expanded="true" />
+                <element signature="e#1761#1762#0" expanded="true" />
                 <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#showProgress#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#hideProgress#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#setImage#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#getImageSize#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#showToast#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#applyState#0;class#MainActivity#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainPresenterImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenterImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="63" column="53" lean-forward="false" selection-start-line="63" selection-start-column="53" selection-end-line="63" selection-end-column="53" />
+              <folding>
+                <element signature="method#showCurrentImage#0;class#MainPresenterImpl#0" expanded="false" />
+                <element signature="method#setWallpaper#0;class#MainPresenterImpl#0" expanded="false" />
+                <element signature="method#checkLoadedType#0;class#MainPresenterImpl#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1963,9 +1914,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/test/java/com/debugg3r/android/solarwallpaper/BitmapServiceTest.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/SharedPreferencesHelper.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/dagger/DataModule.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/pref_general.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/SettingsActivityStandart.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/main_menu.xml" />
@@ -1980,11 +1928,9 @@
         <option value="$PROJECT_DIR$/app/src/androidTest/java/com/debugg3r/android/solarwallpaper/ImageLoaderTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/ScreenService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/MySslSocketFactory.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceFactory.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/SettingsView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/dagger/ApplicationComponent.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/SettingsActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/SettingsPresenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/SettingsPresenterImpl.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/dagger/PresenterModule.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" />
@@ -1994,10 +1940,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/image_list_preference_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/custom/ImageListPreference.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceKit.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainView.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/BitmapService.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/com/debugg3r/android/solarwallpaper/MainPresenterTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenter.java" />
@@ -2006,14 +1949,22 @@
         <option value="$PROJECT_DIR$/app/src/androidTest/java/com/debugg3r/android/solarwallpaper/DataMagnagerTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/gradle.properties" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenterImpl.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceJelly.java" />
-        <option value="$PROJECT_DIR$/app/src/androidTest/java/com/debugg3r/android/solarwallpaper/LoadServiceJellyTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/WallpaperJobService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/SolarApplication.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/com/debugg3r/android/solarwallpaper/LoadServiceJellyTest.java" />
+        <option value="$PROJECT_DIR$/app/src/test/java/com/debugg3r/android/solarwallpaper/RxTest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceJelly.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceKit.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceFactory.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/SharedPreferencesHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/SettingsPresenter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainViewState.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenterImpl.java" />
       </list>
     </option>
   </component>
@@ -2049,6 +2000,28 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SolarWallpaper" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2080,6 +2053,50 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="solarwallpaper" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SolarWallpaper" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="solarwallpaper" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SolarWallpaper" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="solarwallpaper" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="presenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2104,9 +2121,50 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SolarWallpaper" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SolarWallpaper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SolarWallpaper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="io.reactivex:rxjava:1.2.3@jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rxjava-1.2.3.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -2201,54 +2259,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Android App.app">
-    <configuration default="false" name="getAsyncBitmap() (1)" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <option name="TESTING_TYPE" value="3" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="android.support.test.runner.AndroidJUnitRunner" />
-      <option name="METHOD_NAME" value="getAsyncBitmap" />
-      <option name="CLASS_NAME" value="com.debugg3r.android.solarwallpaper.LoadServiceJellyTest" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
-      <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-      </Profilers>
-      <method>
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1511201676875" />
-      </method>
-    </configuration>
     <configuration default="false" name="getAsyncBitmap() (2)" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <option name="TESTING_TYPE" value="3" />
@@ -2294,7 +2304,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1511201676876" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1511209360035" />
       </method>
     </configuration>
     <configuration default="false" name="getAsyncBitmap() (3)" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
@@ -2342,7 +2352,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1511201676876" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1511209360035" />
       </method>
     </configuration>
     <configuration default="false" name="getFileName()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
@@ -2390,7 +2400,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1511201676876" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1511209360035" />
       </method>
     </configuration>
     <configuration default="false" name="getSyncBitmap()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
@@ -2438,8 +2448,34 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1511201676876" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1511209360035" />
       </method>
+    </configuration>
+    <configuration default="false" name="RxTest.testSingle" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.debugg3r.android.solarwallpaper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="app" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.debugg3r.android.solarwallpaper" />
+      <option name="MAIN_CLASS_NAME" value="com.debugg3r.android.solarwallpaper.RxTest" />
+      <option name="METHOD_NAME" value="testSingle" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
     </configuration>
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -2511,7 +2547,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1511201676882" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1511209360035" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2559,7 +2595,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1511201676883" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1511209360035" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2591,6 +2627,27 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
@@ -2721,24 +2778,24 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1511201676885" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1511209360037" />
       </method>
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Android App.app" />
-      <item index="1" class="java.lang.String" itemvalue="Android Instrumented Tests.getAsyncBitmap() (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Android Instrumented Tests.getAsyncBitmap() (2)" />
-      <item index="3" class="java.lang.String" itemvalue="Android Instrumented Tests.getAsyncBitmap() (3)" />
-      <item index="4" class="java.lang.String" itemvalue="Android Instrumented Tests.getFileName()" />
-      <item index="5" class="java.lang.String" itemvalue="Android Instrumented Tests.getSyncBitmap()" />
+      <item index="1" class="java.lang.String" itemvalue="Android Instrumented Tests.getAsyncBitmap() (2)" />
+      <item index="2" class="java.lang.String" itemvalue="Android Instrumented Tests.getAsyncBitmap() (3)" />
+      <item index="3" class="java.lang.String" itemvalue="Android Instrumented Tests.getFileName()" />
+      <item index="4" class="java.lang.String" itemvalue="Android Instrumented Tests.getSyncBitmap()" />
+      <item index="5" class="java.lang.String" itemvalue="Android JUnit.RxTest.testSingle" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Android Instrumented Tests.getSyncBitmap()" />
-        <item index="1" class="java.lang.String" itemvalue="Android Instrumented Tests.getFileName()" />
-        <item index="2" class="java.lang.String" itemvalue="Android Instrumented Tests.getAsyncBitmap() (3)" />
-        <item index="3" class="java.lang.String" itemvalue="Android Instrumented Tests.getAsyncBitmap() (2)" />
-        <item index="4" class="java.lang.String" itemvalue="Android Instrumented Tests.getAsyncBitmap() (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Android JUnit.RxTest.testSingle" />
+        <item index="1" class="java.lang.String" itemvalue="Android Instrumented Tests.getSyncBitmap()" />
+        <item index="2" class="java.lang.String" itemvalue="Android Instrumented Tests.getFileName()" />
+        <item index="3" class="java.lang.String" itemvalue="Android Instrumented Tests.getAsyncBitmap() (3)" />
+        <item index="4" class="java.lang.String" itemvalue="Android Instrumented Tests.getAsyncBitmap() (2)" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
@@ -2774,20 +2831,14 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="getAsyncBitmap()_(2) - 2017.10.01 at 16h 48m 23s.xml">
-      <configuration name="getAsyncBitmap() (2)" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="RxTest_testSingle - 2017.11.20 at 21h 55m 36s.xml">
+      <configuration name="RxTest.testSingle" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="getAsyncBitmap()_(3) - 2017.10.01 at 16h 49m 49s.xml">
-      <configuration name="getAsyncBitmap() (3)" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="RxTest_testSingle - 2017.11.20 at 21h 55m 58s.xml">
+      <configuration name="RxTest.testSingle" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="getFileName() - 2017.10.22 at 21h 52m 09s.xml">
-      <configuration name="getFileName()" configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="getFileName() - 2017.10.22 at 21h 54m 37s.xml">
-      <configuration name="getFileName()" configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="getHttpsConnection() - 2017.09.23 at 14h 18m 38s.xml">
-      <configuration name="getHttpsConnection()" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="RxTest_testSingle - 2017.11.20 at 21h 58m 38s.xml">
+      <configuration name="RxTest.testSingle" configurationId="AndroidJUnit" />
     </history-entry>
     <history-entry file="getHttpsConnection() - 2017.09.23 at 14h 26m 21s.xml">
       <configuration name="getHttpsConnection()" configurationId="AndroidTestRunConfigurationType" />
@@ -2802,6 +2853,12 @@
       <configuration name="getSyncBitmap()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
     <history-entry file="getSyncBitmap() - 2017.11.19 at 22h 11m 48s.xml">
+      <configuration name="getSyncBitmap()" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="getSyncBitmap() - 2017.11.20 at 21h 37m 10s.xml">
+      <configuration name="getSyncBitmap()" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="getSyncBitmap() - 2017.11.20 at 21h 38m 29s.xml">
       <configuration name="getSyncBitmap()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
   </component>
@@ -2833,7 +2890,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28366113" sideWeight="0.48722318" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28366113" sideWeight="0.48722318" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.49403748" order="1" side_tool="false" content_ui="tabs" />
@@ -2873,52 +2930,12 @@
           <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenterImpl.java</url>
-          <line>48</line>
-          <properties />
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="39" />
+      <option name="time" value="43" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/attrs.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/pref_solar.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="2" column="90" lean-forward="false" selection-start-line="2" selection-start-column="90" selection-end-line="2" selection-end-column="90" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/image_list_preference_item.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="43" lean-forward="false" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2938,13 +2955,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="30" lean-forward="false" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/SettingsPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -3019,27 +3029,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/SharedPreferencesHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-289">
-          <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/FileService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -3094,17 +3083,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/com/debugg3r/android/solarwallpaper/DataMagnagerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-255">
           <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3127,27 +3110,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
           <caret line="58" column="108" lean-forward="false" selection-start-line="58" selection-start-column="108" selection-end-line="58" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceKit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="32" column="56" lean-forward="true" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceJelly.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="76" column="9" lean-forward="false" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3155,20 +3118,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/DataManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="164" column="0" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/com/debugg3r/android/solarwallpaper/LoadServiceJellyTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="103" column="5" lean-forward="false" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3207,14 +3157,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="47" column="44" lean-forward="false" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/dagger/ApplicationComponent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -3239,25 +3181,179 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.2.3/8f6af8e090929fe0ebc36b6b79b4da7decfd481e/rxjava-1.2.3-sources.jar!/rx/Single.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="51" column="3" lean-forward="true" selection-start-line="51" selection-start-column="3" selection-end-line="51" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/debugg3r/android/solarwallpaper/RxTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="37" column="30" lean-forward="true" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/debugg3r/android/solarwallpaper/ExampleUnitTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/com/debugg3r/android/solarwallpaper/LoadServiceJellyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+          <folding>
+            <element signature="method#setupEnvironment#0;class#LoadServiceJellyTest#0" expanded="false" />
+            <element signature="method#getHttpsConnection#0;class#LoadServiceJellyTest#0" expanded="false" />
+            <element signature="method#getAsyncBitmap#0;class#LoadServiceJellyTest#0" expanded="false" />
+            <element signature="method#getSyncBitmap#0;class#LoadServiceJellyTest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/DataManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="157" column="28" lean-forward="false" selection-start-line="157" selection-start-column="28" selection-end-line="157" selection-end-column="28" />
+          <folding>
+            <element signature="method#getScreenSize#0;class#DataManager#0" expanded="false" />
+            <element signature="method#setWallpaper#0;class#DataManager#0" expanded="false" />
+            <element signature="method#showNotification#0;class#DataManager#0" expanded="false" />
+            <element signature="method#showErrorNotification#0;class#DataManager#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="method#getImageUrl#0;class#LoadService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceJelly.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="35" column="43" lean-forward="false" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+          <folding>
+            <element signature="method#getInstance#0;class#LoadServiceJelly#0" expanded="false" />
+            <element signature="e#972#1881#0" expanded="false" />
+            <element signature="e#1908#2559#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/SharedPreferencesHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="66" column="63" lean-forward="false" selection-start-line="66" selection-start-column="63" selection-end-line="66" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainViewState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="38" lean-forward="false" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+          <folding>
+            <element signature="e#355#356#0" expanded="true" />
+            <element signature="e#384#385#0" expanded="true" />
+            <element signature="e#424#425#0" expanded="true" />
+            <element signature="e#460#461#0" expanded="true" />
+            <element signature="e#493#494#0" expanded="true" />
+            <element signature="e#523#524#0" expanded="true" />
+            <element signature="e#568#569#0" expanded="true" />
+            <element signature="e#606#607#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/model/loadservice/LoadServiceKit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+          <folding>
+            <element signature="method#getUnsafeOkHttpClient#0;class#LoadServiceKit#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/view/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="161" column="1" lean-forward="true" selection-start-line="161" selection-start-column="1" selection-end-line="161" selection-end-column="1" />
+        <state relative-caret-position="-340">
+          <caret line="30" column="71" lean-forward="false" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2285#2320#0" expanded="true" />
-            <element signature="e#2412#2413#0" expanded="true" />
-            <element signature="e#2460#2461#0" expanded="true" />
-            <element signature="e#2550#2551#0" expanded="true" />
-            <element signature="e#2594#2595#0" expanded="true" />
-            <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#2855#2890#0" expanded="true" />
-            <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#1579#1580#0" expanded="true" />
+            <element signature="e#1627#1628#0" expanded="true" />
+            <element signature="e#1717#1718#0" expanded="true" />
+            <element signature="e#1761#1762#0" expanded="true" />
             <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
             <element signature="method#showProgress#0;class#MainActivity#0" expanded="false" />
             <element signature="method#hideProgress#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#setImage#0;class#MainActivity#0" expanded="false" />
             <element signature="method#getImageSize#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#showToast#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#applyState#0;class#MainActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/SettingsPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/debugg3r/android/solarwallpaper/presenter/MainPresenterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="63" column="53" lean-forward="false" selection-start-line="63" selection-start-column="53" selection-end-line="63" selection-end-column="53" />
+          <folding>
+            <element signature="method#showCurrentImage#0;class#MainPresenterImpl#0" expanded="false" />
+            <element signature="method#setWallpaper#0;class#MainPresenterImpl#0" expanded="false" />
+            <element signature="method#checkLoadedType#0;class#MainPresenterImpl#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import rx.Observable;
 
 public abstract class LoadService {
-    public abstract Observable<Bitmap> loadImageObservable(String type, String res);
 
     public static String getImageUrl(String type, String resolution) {
         String imageFormat = "latest_512_0171.jpg";
@@ -43,6 +42,8 @@ public abstract class LoadService {
 
         return imageUrl;
     }
+
+    public abstract Observable<Bitmap> loadImageObservable(String type, String res);
 
     public abstract Bitmap loadImageSync(String type, String res);
 }

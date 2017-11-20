@@ -17,6 +17,7 @@ import rx.schedulers.Schedulers;
 public class LoadServiceJelly extends LoadService {
 
     private static LoadServiceJelly mInstance;
+
     private LoadServiceJelly() {
     }
 
