@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import com.debugg3r.android.solarwallpaper.view.MainActivity;
+
 public class SharedPreferencesHelper {
     private Context mContext;
 
@@ -54,5 +56,15 @@ public class SharedPreferencesHelper {
             return preferences.getBoolean(key, false);
         }
         return false;
+    }
+
+    public void registerOnChangeListener(SharedPreferences.OnSharedPreferenceChangeListener listener) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mContext);
+        preferences.registerOnSharedPreferenceChangeListener(listener);
+    }
+
+    public void unregisterOnChangeListener(SharedPreferences.OnSharedPreferenceChangeListener listener) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mContext);
+        preferences.unregisterOnSharedPreferenceChangeListener(listener);
     }
 }

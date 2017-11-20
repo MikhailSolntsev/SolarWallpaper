@@ -13,4 +13,6 @@ public interface MainView {
     Point getImageSize();
 
     void showToast(String s);
+
+    void applyState(MainViewState state);
 }

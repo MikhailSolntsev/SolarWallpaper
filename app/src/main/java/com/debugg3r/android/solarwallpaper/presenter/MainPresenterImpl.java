@@ -7,6 +7,7 @@ import android.util.Log;
 import com.debugg3r.android.solarwallpaper.model.BitmapService;
 import com.debugg3r.android.solarwallpaper.model.DataManager;
 import com.debugg3r.android.solarwallpaper.view.MainView;
+import com.debugg3r.android.solarwallpaper.view.MainViewState;
 
 import java.io.IOException;
 
@@ -20,9 +21,14 @@ public class MainPresenterImpl implements MainPresenter {
     private DataManager mDataManager;
     private MainView mView;
 
+    private MainViewState mState;
+
     public MainPresenterImpl(DataManager mDataManager) {
         this.mDataManager = mDataManager;
         mView = null;
+        mState = new MainViewState();
+        mState.setState(MainViewState.STATE_NOTHING);
+        // todo check for loaded image, cache it
     }
 
     private boolean isViewAttached() {
@@ -32,6 +38,8 @@ public class MainPresenterImpl implements MainPresenter {
     @Override
     public void attachView(MainView view) {
         mView = view;
+        if (isViewAttached())
+            mView.applyState(mState);
     }
 
     @Override
@@ -41,16 +49,22 @@ public class MainPresenterImpl implements MainPresenter {
 
     @Override
     public void loadCurrentImage() {
-        mView.showProgress();
+        mState.setState(MainViewState.STATE_LOADING);
+        if (isViewAttached()) {
+            mView.applyState(mState);
+        }
+
         mDataManager.getBitmapFromSdoObservable()
                 .observeOn(Schedulers.computation())
-                .flatMap(bmp -> {
-                            Point point = mView.getImageSize();
-                            bmp = BitmapService.fitBitmapToSize(bmp, point.x, point.y);
-                            return Observable.just(bmp);
-                        },
-                        throwable -> Observable.create(f -> f.onError(throwable)),
-                        () -> Observable.create(f -> f.onCompleted()))
+                .map(bmp -> {
+                    Point point;
+                    if (isViewAttached()) {
+                        point = mView.getImageSize();
+                    } else {
+                        point = new Point(1280, 720);
+                    }
+                    bmp = BitmapService.fitBitmapToSize(bmp, point.x, point.y);
+                    return bmp;})
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(bmp -> {
                             mView.hideProgress();
