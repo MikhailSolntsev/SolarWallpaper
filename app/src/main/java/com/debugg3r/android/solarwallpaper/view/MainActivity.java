@@ -24,6 +24,10 @@ import com.debugg3r.android.solarwallpaper.presenter.MainPresenter;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity implements MainView{
 
     private static final String LOG_TAG = "MAIN_ACTIVITY";
@@ -31,8 +35,12 @@ public class MainActivity extends AppCompatActivity implements MainView{
     @Inject
     MainPresenter mainPresenter;
 
-    private ImageView mImageViewWall;
-    private ProgressBar mProgressBar;
+    @BindView(R.id.image_view_wall)
+    ImageView mImageViewWall;
+
+//    @BindView(R.id.loading_progress_bar)
+//    private ProgressBar mProgressBar;
+
     private SharedPreferencesHelper mSharedHelper;
     private String mImageType;
     private Point mImageSize;
@@ -44,25 +52,37 @@ public class MainActivity extends AppCompatActivity implements MainView{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ButterKnife.bind(this);
         SolarApplication.getComponent().inject(this);
 
-        mImageViewWall = (ImageView) findViewById(R.id.image_view_wall);
+        //mImageViewWall = (ImageView) findViewById(R.id.image_view_wall);
 
-        Button buttonShow = (Button) findViewById(R.id.button_show_image);
-        buttonShow.setOnClickListener((view) -> mainPresenter.loadCurrentImage());
+//        Button buttonShow = (Button) findViewById(R.id.button_show_image);
+//        buttonShow.setOnClickListener((view) -> mainPresenter.loadCurrentImage());
 
-        Button buttonSet = (Button) findViewById(R.id.button_set_wallpaper);
-        buttonSet.setOnClickListener((view) -> mainPresenter.setWallpaper());
+//        Button buttonSet = (Button) findViewById(R.id.button_set_wallpaper);
+//        buttonSet.setOnClickListener((view) -> mainPresenter.setWallpaper());
 
-        mProgressBar = (ProgressBar) findViewById(R.id.loading_progress_bar);
+        //mProgressBar = (ProgressBar) findViewById(R.id.loading_progress_bar);
 
         mSharedHelper = new SharedPreferencesHelper(this);
         mImageType = mSharedHelper.getString(getString(R.string.pref_image_type));
 
     }
 
+    @OnClick(R.id.button_show_image)
+    public void onClickShowImage(View view) {
+        mainPresenter.loadCurrentImage();
+    }
+
+    @OnClick(R.id.button_set_wallpaper)
+    public void onClickSetWallpaper(View view) {
+        mainPresenter.setWallpaper();
+    }
+
     @Override
     protected void onResume() {
+
         super.onResume();
 
         mainPresenter.attachView(this);
@@ -103,7 +123,6 @@ public class MainActivity extends AppCompatActivity implements MainView{
         return true;
     }
 
-
     @Override
     public void showProgress() {
         if (mProgressDialog == null) {
@@ -139,4 +158,5 @@ public class MainActivity extends AppCompatActivity implements MainView{
     public void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT);
     }
+
 }

@@ -71,7 +71,7 @@ public class MainPresenterImpl implements MainPresenter {
             // 2. if it is present, load it
             mDataManager.getBitmapFromFile(filename)
                     .subscribeOn(Schedulers.io())
-                    .observeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
                     // 3. set image
                     .subscribe(bmp -> mView.setImage(bmp));
         }

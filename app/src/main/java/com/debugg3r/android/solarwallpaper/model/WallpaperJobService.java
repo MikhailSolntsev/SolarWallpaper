@@ -27,67 +27,25 @@ import rx.schedulers.Schedulers;
 public class WallpaperJobService extends JobService {
 
     private static String JOB_TAG = "SolarWallpaperUpdater";
-    private static boolean isScheduled = false;
 
     private AsyncTask<Void, Void, Void> mWallapaperTask;
 
-    @Inject
-    DataManager dataManager;
+    //@Inject
+    //DataManager dataManager;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        SolarApplication.getComponent().inject(this);
+        //SolarApplication.getComponent().inject(this);
     }
 
     @Override
     public boolean onStartJob(final JobParameters job) {
-        if (dataManager == null) {
-            dataManager = new DataManager(this);
-        }
+//        if (dataManager == null) {
+//            dataManager = new DataManager(this);
+//        }
 
-        mWallapaperTask = new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(Void[] params) {
-                Bitmap bmp = null;
-                try {
-                    bmp = dataManager.getBitmapFromSdoSync();
-                } catch (Exception ex) {
-                    dataManager.showErrorNotification(ex);
-                    return null;
-                } catch (Error er) {
-                    dataManager.showErrorNotification(er);
-                    return null;
-                }
-                if (bmp == null) {
-                    Throwable throwable = new NullPointerException("bmp is null");
-                    dataManager.showErrorNotification(throwable);
-                    //throw throwable;
-                }
-
-                Point size = dataManager.getScreenSize();
-                bmp = BitmapService.fitBitmapToSize(bmp, size.y, size.x);
-
-                try {
-                    dataManager.setWallpaper(bmp);
-                    dataManager.showNotification(1);
-                } catch (IOException e) {
-                    dataManager.showErrorNotification(e);
-                    e.printStackTrace();
-                }
-
-                return null;
-            }
-
-            @Override
-            protected void onPostExecute(Void o) {
-//                super.onPostExecute(o);
-//
-//                dataManager.showNotification(1);
-
-                jobFinished(job, false);
-            }
-        };
+        mWallapaperTask = new JobTask(this, job);
 
         mWallapaperTask.execute();
 
@@ -108,12 +66,10 @@ public class WallpaperJobService extends JobService {
         FirebaseJobDispatcher dispatcher = new FirebaseJobDispatcher(driver);
         if (interval == -1) {
             dispatcher.cancel(JOB_TAG);
-            isScheduled = false;
             return true;
         }
         if (!active) {
             dispatcher.cancel(JOB_TAG);
-            isScheduled = false;
             return true;
         }
 
@@ -137,5 +93,54 @@ public class WallpaperJobService extends JobService {
             return false;
         }
         return true;
+    }
+
+    private static class JobTask extends AsyncTask<Void, Void, Void> {
+        private JobService mJobService;
+        private JobParameters mJob;
+
+        public JobTask(JobService jobService, JobParameters job) {
+            mJobService = jobService;
+            mJob = job;
+        }
+
+        @Override
+        protected Void doInBackground(Void[] params) {
+            DataManager dataManager = new DataManager(mJobService);
+            Bitmap bmp = null;
+            try {
+                bmp = dataManager.getBitmapFromSdoSync();
+            } catch (Exception ex) {
+                dataManager.showErrorNotification(ex);
+                return null;
+            } catch (Error er) {
+                dataManager.showErrorNotification(er);
+                return null;
+            }
+            if (bmp == null) {
+                Throwable throwable = new NullPointerException("bmp is null");
+                dataManager.showErrorNotification(throwable);
+                //throw throwable;
+            }
+
+            //Point size = dataManager.getScreenSize();
+            Point size = new Point(1280, 768);
+            bmp = BitmapService.fitBitmapToSize(bmp, size.y, size.x);
+
+            try {
+                dataManager.setWallpaper(bmp);
+                dataManager.showNotification(1);
+            } catch (IOException e) {
+                dataManager.showErrorNotification(e);
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void o) {
+            mJobService.jobFinished(mJob, false);
+        }
     }
 }

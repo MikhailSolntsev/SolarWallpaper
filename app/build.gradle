@@ -1,17 +1,20 @@
 apply plugin: 'com.android.application'
-apply plugin: 'me.tatarka.retrolambda'
+//apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.debugg3r.android.solarwallpaper"
-        minSdkVersion 17
+        minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+
+        multiDexEnabled true
+        resConfigs("en", "xhdpi")
     }
     buildTypes {
         release {
@@ -23,6 +26,11 @@ android {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
+    if (projects.hasProperty("devBuild")){
+       // splits.abi.enable = false
+       // splits.density.enable = false
+        aaptOptions.cruncherEnabled = false;
+    }
 }
 
 dependencies {
@@ -32,28 +40,32 @@ dependencies {
     })
 
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:support-v4:25.3.1'
-    compile 'com.android.support:support-vector-drawable:25.3.1'
+    compile 'com.android.support:appcompat-v7:25.4.0'
+    compile 'com.android.support:support-v4:25.4.0'
+    compile 'com.android.support:support-vector-drawable:25.4.0'
     testCompile 'junit:junit:4.12'
 
     // Dagger 2
-    compile 'com.google.dagger:dagger:2.10'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.10'
+    compile 'com.google.dagger:dagger:2.11'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
 
     // Retrolambda
-    compile 'me.tatarka:gradle-retrolambda:3.7.0'
+    //compile 'me.tatarka:gradle-retrolambda:3.7.0'
 
     //Rx
-    compile 'io.reactivex:rxjava:1.1.8'
+    compile 'io.reactivex:rxjava:1.2.3'
     compile 'io.reactivex:rxandroid:1.2.1'
 
     // OkHttp
     compile 'com.squareup.okhttp3:okhttp:3.9.0'
 
     // Firebase
-    compile 'com.firebase:firebase-jobdispatcher:0.8.0'
+    implementation 'com.firebase:firebase-jobdispatcher:0.8.0'
 
     // Mockito
-    testCompile "org.mockito:mockito-core:2.+"
+    testCompile "org.mockito:mockito-core:2.12.0"
+
+    // Butterknife
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }

@@ -4,12 +4,14 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Point;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 import android.util.Log;
 
+import com.debugg3r.android.solarwallpaper.model.DataManager;
 import com.debugg3r.android.solarwallpaper.model.loadservice.LoadService;
 import com.debugg3r.android.solarwallpaper.model.loadservice.LoadServiceFactory;
 import com.debugg3r.android.solarwallpaper.model.loadservice.LoadServiceJelly;
@@ -28,6 +30,7 @@ import javax.net.ssl.HttpsURLConnection;
 import rx.Observable;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
 
@@ -98,5 +101,17 @@ public class LoadServiceJellyTest {
         }
         System.out.println("Test completed! Who-ho");
         Log.d("SOLAR_TEST", "Test completed! Who-ho");
+    }
+
+    @Test
+    public void getSyncBitmap() {
+        assertNotNull("Context is null", mContext);
+
+        DataManager dataManager = new DataManager(mContext);
+        assertNotNull("DataManager is null", dataManager);
+
+        Point size = dataManager.getScreenSize();
+        assertNotEquals("Screen size iz 0", 0, size.x);
+        assertNotEquals("Screen size iz 0", 0, size.y);
     }
 }
