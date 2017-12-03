@@ -13,9 +13,12 @@ import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
+import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.Response;
 import rx.Observable;
+import rx.Single;
 import rx.Subscriber;
 import rx.schedulers.Schedulers;
 import rx.subjects.BehaviorSubject;
@@ -86,34 +89,36 @@ public class LoadServiceKit extends LoadService {
                     Request request = new Request.Builder()
                             .url(url)
                             .build();
-                    return client.newCall(request);
-                })
-                // do call
-                .map(call -> {
+                    Call call = client.newCall(request);
+
+                    Response response = null;
                     try {
-                        return call.execute();
+                        response = call.execute();
                     } catch (IOException e) {
                         result.onError(e);
                         //return Observable.error(e);
                         return null;
                     }
-                })
-                .filter(response -> response != null)
 
-                // get response
-                .map(response -> {
+                    if (response == null) {
+                        result.onCompleted();
+                        return null;
+                    }
+
                     if (response.body() != null) {
                         try {
                             byte[] body = response.body().bytes();
                             if (body == null) {
                                 result.onCompleted();
                             }
+
                             return body;
                         } catch (IOException e) {
                             result.onError(e);
                         }
+                    } else {
+                        result.onCompleted();
                     }
-                    result.onCompleted();
                     return null;
                 })
                 .filter(body -> body != null)
@@ -129,6 +134,12 @@ public class LoadServiceKit extends LoadService {
 
         return result;
     }
+
+    @Override
+    public Single<byte[]> loadImageSinge(String type, String resolution) {
+        return null;
+    }
+
 
     @Override
     public Bitmap loadImageSync(String type, String res) {

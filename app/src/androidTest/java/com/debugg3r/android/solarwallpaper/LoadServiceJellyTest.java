@@ -118,6 +118,9 @@ public class LoadServiceJellyTest {
         assertNotNull("Bmp is null", bmp);
     }
 
-
+    @Test
+    public void getSingle() {
+        LoadService service = LoadServiceFactory.getLoadService();
+    }
 
 }

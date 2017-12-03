@@ -41,13 +41,25 @@ public class WallpaperJobService extends JobService {
 
     @Override
     public boolean onStartJob(final JobParameters job) {
-//        if (dataManager == null) {
-//            dataManager = new DataManager(this);
-//        }
 
-        mWallapaperTask = new JobTask(this, job);
+        final DataManager dataManager = new DataManager(this);
+        dataManager.getBitmapFromSdoObservable()
+                .subscribe(bmp -> {
+                    if (bmp != null) {
+                        try {
+                            dataManager.setWallpaper(bmp);
+                            dataManager.showNotification(1);
+                        } catch (IOException e) {
+                            dataManager.showErrorNotification(e);
+                            e.printStackTrace();
+                        }
+                    }
 
-        mWallapaperTask.execute();
+                    jobFinished(job, false);
+                });
+//        mWallapaperTask = new JobTask(this, job);
+//
+//        mWallapaperTask.execute();
 
         return true;
 
@@ -143,4 +155,5 @@ public class WallpaperJobService extends JobService {
             mJobService.jobFinished(mJob, false);
         }
     }
+
 }

@@ -3,6 +3,7 @@ package com.debugg3r.android.solarwallpaper.model.loadservice;
 import android.graphics.Bitmap;
 
 import rx.Observable;
+import rx.Single;
 
 public abstract class LoadService {
 
@@ -44,6 +45,8 @@ public abstract class LoadService {
     }
 
     public abstract Observable<Bitmap> loadImageObservable(String type, String res);
+
+    public abstract Single<byte[]> loadImageSinge(String type, String res);
 
     public abstract Bitmap loadImageSync(String type, String res);
 }
