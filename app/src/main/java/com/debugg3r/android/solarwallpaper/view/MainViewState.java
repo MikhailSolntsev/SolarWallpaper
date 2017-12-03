@@ -16,6 +16,30 @@ public class MainViewState {
 
     public void setState(int mState) {
         this.mState = mState;
+
+    }
+
+    public void applyState(MainView mainView) {
+        if (mainView == null) {
+            return;
+        }
+
+        switch (mState){
+            case STATE_NOTHING:
+                mainView.hideProgress();
+                break;
+
+            case STATE_LOADING:
+                mainView.showProgress();
+                break;
+
+            case STATE_IMAGE:
+                mainView.hideProgress();
+                mainView.setImage(mBitmap);
+                break;
+
+            default:
+        }
     }
 
     public Bitmap getBitmap() {

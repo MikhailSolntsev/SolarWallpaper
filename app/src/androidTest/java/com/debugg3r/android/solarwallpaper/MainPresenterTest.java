@@ -13,6 +13,7 @@ import com.debugg3r.android.solarwallpaper.model.DataManager;
 import com.debugg3r.android.solarwallpaper.presenter.MainPresenter;
 import com.debugg3r.android.solarwallpaper.presenter.MainPresenterImpl;
 import com.debugg3r.android.solarwallpaper.view.MainView;
+import com.debugg3r.android.solarwallpaper.view.MainViewState;
 
 import static org.junit.Assert.*;
 
@@ -32,6 +33,7 @@ public class MainPresenterTest {
     private DataManager mDataManager;
     private MainView mMainView;
     private MainPresenter mMainPresenter;
+    private MainViewState mMainViewState;
 
     private String type = "type_aia_094";
     private String resolution = "256";
@@ -40,11 +42,21 @@ public class MainPresenterTest {
     public void setupDummy() {
         setupContext();
         setupBitmap();
-        setupDataManager();
+        setupNotNullDataManager();
         setupMainView();
+        setupMainViewState();
 
         mMainPresenter = new MainPresenterImpl(mDataManager);
         mMainPresenter.attachView(mMainView);
+    }
+
+    private void setupMainViewState() {
+        mMainViewState = new MainViewState(){
+            @Override
+            public void setBitmap(Bitmap mBitmap) {
+                super.setBitmap(mBitmap);
+            }
+        };
     }
 
     private void setupBitmap() {
@@ -68,21 +80,18 @@ public class MainPresenterTest {
             public void setImage(Bitmap image) {
                 assertNotNull("Image to set is null", image);
                 assertTrue("Image to set is empty", image.getHeight() > 0);
-            }
-
-            @Override
-            public Point getImageSize() {
-                return new Point(1, 1);
+                System.out.println("Image set");
             }
 
             @Override
             public void showToast(String s) {
                 System.out.println(s);
             }
+
         };
     }
 
-    private void setupDataManager() {
+    private void setupNotNullDataManager() {
         mDataManager = new DataManager(mContext) {
             @Override
             public Point getScreenSize() {
@@ -108,8 +117,47 @@ public class MainPresenterTest {
         };
     }
 
+    private void setupNullDataManager() {
+        mDataManager = new DataManager(mContext) {
+            @Override
+            public Point getScreenSize() {
+                Point result = new Point(102, 76);
+                return result;
+            }
+
+            @Override
+            public void setWallpaper(Bitmap bmp) throws IOException {
+                assertNotNull("Wallpaper bmp is null", bmp);
+                assertTrue("Wallpaper bmp is empty", bmp.getWidth() > 0);
+            }
+
+            @Override
+            public Bitmap getBitmapFromResource() {
+                return null;
+            }
+
+            @Override
+            public Observable<Bitmap> getBitmapFromSdoObservable() {
+                return Observable.just(null);
+            }
+        };
+    }
+
     @Test
-    public void testGetImage() throws Exception {
+    public void testLoadBitmapNotNull() {
+        setupNotNullDataManager();
+        setupMainView();
+        mMainPresenter = new MainPresenterImpl(mDataManager);
+        mMainPresenter.attachView(mMainView);
+        mMainPresenter.loadCurrentImage();
+    }
+
+    @Test
+    public void testLoadBitmapNull() {
+        setupNullDataManager();
+        setupMainView();
+        mMainPresenter = new MainPresenterImpl(mDataManager);
+        mMainPresenter.attachView(mMainView);
         mMainPresenter.loadCurrentImage();
     }
 
@@ -117,4 +165,5 @@ public class MainPresenterTest {
     public void testSetWallpaper()  throws Exception {
         mMainPresenter.setWallpaper();
     }
+
 }

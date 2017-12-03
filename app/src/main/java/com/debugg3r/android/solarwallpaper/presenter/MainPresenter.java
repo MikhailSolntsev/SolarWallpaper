@@ -16,5 +16,4 @@ public interface MainPresenter {
 
     void setWallpaper();
 
-    String checkLoadedType(String imageType);
 }

@@ -28,7 +28,12 @@ public class MainPresenterImpl implements MainPresenter {
         mView = null;
         mState = new MainViewState();
         mState.setState(MainViewState.STATE_NOTHING);
-        // todo check for loaded image, cache it
+
+        showCurrentImage();
+    }
+
+    public void setmState(MainViewState mState) {
+        this.mState = mState;
     }
 
     private boolean isViewAttached() {
@@ -38,8 +43,7 @@ public class MainPresenterImpl implements MainPresenter {
     @Override
     public void attachView(MainView view) {
         mView = view;
-        if (isViewAttached())
-            mView.applyState(mState);
+        mState.applyState(mView);
     }
 
     @Override
@@ -50,29 +54,26 @@ public class MainPresenterImpl implements MainPresenter {
     @Override
     public void loadCurrentImage() {
         mState.setState(MainViewState.STATE_LOADING);
-        if (isViewAttached()) {
-            mView.applyState(mState);
-        }
+        mState.applyState(mView);
 
         mDataManager.getBitmapFromSdoObservable()
-                .observeOn(Schedulers.computation())
-                .map(bmp -> {
-                    Point point;
-                    if (isViewAttached()) {
-                        point = mView.getImageSize();
-                    } else {
-                        point = new Point(1280, 720);
-                    }
-                    bmp = BitmapService.fitBitmapToSize(bmp, point.x, point.y);
-                    return bmp;})
+                .subscribeOn(Schedulers.computation())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(bmp -> {
-                            mView.hideProgress();
-                            mView.setImage(bmp);
+                .subscribe(
+                        //  onNext
+                        bmp -> {
+                            mState.setState(MainViewState.STATE_IMAGE);
+                            mState.setBitmap(bmp);
+                            mState.applyState(mView);
                         },
+                        //  onError
                         throwable -> {mView.hideProgress();
                                 throw new NullPointerException(throwable.getMessage());},
-                        () -> mView.hideProgress());
+                        //  onComplete
+                        () -> {
+                            mState.setState(MainViewState.STATE_IMAGE);
+                            mState.applyState(mView);
+                        });
     }
 
     @Override
@@ -83,11 +84,16 @@ public class MainPresenterImpl implements MainPresenter {
             loadCurrentImage();
         } else {
             // 2. if it is present, load it
+            mState.setState(MainViewState.STATE_LOADING);
+
             mDataManager.getBitmapFromFile(filename)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     // 3. set image
-                    .subscribe(bmp -> mView.setImage(bmp));
+                    .subscribe(bmp -> {
+                        mState.setBitmap(bmp);
+                        mState.setState(MainViewState.STATE_IMAGE);
+                    });
         }
     }
 
@@ -114,12 +120,6 @@ public class MainPresenterImpl implements MainPresenter {
 
                     mDataManager.showNotification(1);
                 });
-    }
-
-    @Override
-    public String checkLoadedType(String imageType) {
-        String newType = "";
-        return newType;
     }
 
 }
