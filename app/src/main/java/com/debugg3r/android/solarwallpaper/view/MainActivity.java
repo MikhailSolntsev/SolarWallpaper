@@ -1,15 +1,14 @@
 package com.debugg3r.android.solarwallpaper.view;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Point;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -36,9 +35,10 @@ public class MainActivity extends AppCompatActivity implements MainView{
     MainPresenter mainPresenter;
 
     @BindView(R.id.image_view_wall)
-    ImageView mImageViewWall;
+    ImageView imageViewWall;
 
     private AlertDialog mProgressDialog;
+    //private ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,12 +104,10 @@ public class MainActivity extends AppCompatActivity implements MainView{
     public void showProgress() {
         if (mProgressDialog == null) {
             ProgressBar bar = new ProgressBar(this);
-//            ViewGroup.LayoutParams params = bar.getLayoutParams();
-//            params.width = ViewGroup.LayoutParams.WRAP_CONTENT;
-
             mProgressDialog = new AlertDialog.Builder(this)
                     .setView(bar)
                     .create();
+            //mProgressDialog = new ProgressDialog(this, R.style.AppTheme);
         }
         mProgressDialog.show();
     }
@@ -123,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements MainView{
     @Override
     public void setImage(Bitmap image) {
         if (image != null)
-            mImageViewWall.setImageBitmap(image);
+            imageViewWall.setImageBitmap(image);
     }
 
     @Override

@@ -91,9 +91,17 @@ public class MainPresenterImpl implements MainPresenter {
                     .observeOn(AndroidSchedulers.mainThread())
                     // 3. set image
                     .subscribe(bmp -> {
-                        mState.setBitmap(bmp);
-                        mState.setState(MainViewState.STATE_IMAGE);
-                    });
+                                mState.setBitmap(bmp);
+                                mState.setState(MainViewState.STATE_IMAGE);
+                                mState.applyState(mView);
+                            },
+                            throwable -> {
+                                mState.setState(MainViewState.STATE_NOTHING);
+                                mState.applyState(mView);
+                            },
+                            () -> {
+                                mState.applyState(mView);
+                            });
         }
     }
 

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.debugg3r.android.solarwallpaper.view.MainActivity">
+    tools:context="com.debugg3r.android.solarwallpaper.view.MainActivity"
+    style="@style/MyStyle">
 
     <Button
         android:layout_width="0dp"

@@ -21,9 +21,11 @@ public class BitmapService {
         return BitmapFactory.decodeResource(mContext.getResources(), drawable);
     }
 
+
     static public Bitmap getBitmapFromStream(InputStream inputStream) {
         return BitmapFactory.decodeStream(inputStream);
     }
+
 
     public static Bitmap fitBitmapToSize(Bitmap bitmap, int height, int width) {
         int originHeight = bitmap.getHeight();
@@ -37,8 +39,8 @@ public class BitmapService {
         float scale = Math.max(scaleX, scaleY);
         Log.d(LOG_TAG, "Original scale: " + String.valueOf(scale));
         return Bitmap.createScaledBitmap(bitmap, (int)(originHeight * scale), (int)(originWidth * scale), false);
-
     }
+
 
     public static Bitmap largeIcon(Context context) {
         Resources resources = context.getResources();

@@ -28,15 +28,9 @@ public class WallpaperJobService extends JobService {
 
     private static String JOB_TAG = "SolarWallpaperUpdater";
 
-    private AsyncTask<Void, Void, Void> mWallapaperTask;
-
-    //@Inject
-    //DataManager dataManager;
-
     @Override
     public void onCreate() {
         super.onCreate();
-        //SolarApplication.getComponent().inject(this);
     }
 
     @Override
@@ -44,32 +38,31 @@ public class WallpaperJobService extends JobService {
 
         final DataManager dataManager = new DataManager(this);
         dataManager.getBitmapFromSdoObservable()
-                .subscribe(bmp -> {
-                    if (bmp != null) {
-                        try {
-                            dataManager.setWallpaper(bmp);
+                .subscribe(
+                        bmp -> {
+                            if (bmp != null) {
+                                try {
+                                    dataManager.setWallpaper(bmp);
+                                    dataManager.showNotification(1);
+                                } catch (IOException e) {
+                                    dataManager.showErrorNotification(e);
+                                    e.printStackTrace();
+                                }
+                            }
+                        },
+                        throwable -> {
+                            dataManager.showErrorNotification(throwable);
+                            jobFinished(job, false);
+                        },
+                        () -> {
                             dataManager.showNotification(1);
-                        } catch (IOException e) {
-                            dataManager.showErrorNotification(e);
-                            e.printStackTrace();
-                        }
-                    }
-
-                    jobFinished(job, false);
-                });
-//        mWallapaperTask = new JobTask(this, job);
-//
-//        mWallapaperTask.execute();
-
-        return true;
-
+                            jobFinished(job, false);
+                        });
+        return true; // is job still running?
     }
 
     @Override
     public boolean onStopJob(JobParameters job) {
-        if (mWallapaperTask != null) {
-            mWallapaperTask.cancel(true);
-        }
         return true;
     }
 
@@ -105,55 +98,6 @@ public class WallpaperJobService extends JobService {
             return false;
         }
         return true;
-    }
-
-    private static class JobTask extends AsyncTask<Void, Void, Void> {
-        private JobService mJobService;
-        private JobParameters mJob;
-
-        public JobTask(JobService jobService, JobParameters job) {
-            mJobService = jobService;
-            mJob = job;
-        }
-
-        @Override
-        protected Void doInBackground(Void[] params) {
-            DataManager dataManager = new DataManager(mJobService);
-            Bitmap bmp = null;
-            try {
-                bmp = dataManager.getBitmapFromSdoSync();
-            } catch (Exception ex) {
-                dataManager.showErrorNotification(ex);
-                return null;
-            } catch (Error er) {
-                dataManager.showErrorNotification(er);
-                return null;
-            }
-            if (bmp == null) {
-                Throwable throwable = new NullPointerException("bmp is null");
-                dataManager.showErrorNotification(throwable);
-                //throw throwable;
-            }
-
-            //Point size = dataManager.getScreenSize();
-            Point size = new Point(1280, 768);
-            bmp = BitmapService.fitBitmapToSize(bmp, size.y, size.x);
-
-            try {
-                dataManager.setWallpaper(bmp);
-                dataManager.showNotification(1);
-            } catch (IOException e) {
-                dataManager.showErrorNotification(e);
-                e.printStackTrace();
-            }
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void o) {
-            mJobService.jobFinished(mJob, false);
-        }
     }
 
 }
