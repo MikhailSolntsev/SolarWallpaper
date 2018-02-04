@@ -12,11 +12,13 @@ import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 
 import rx.Observable;
+import rx.Single;
 import rx.schedulers.Schedulers;
 
 public class LoadServiceJelly extends LoadService {
 
     private static LoadServiceJelly mInstance;
+
     private LoadServiceJelly() {
     }
 
@@ -71,6 +73,11 @@ public class LoadServiceJelly extends LoadService {
                         }, throwable -> Observable.create(subscriber -> subscriber.onError(throwable))
                         , () -> Observable.create(subscriber -> subscriber.onCompleted()));
         return result;
+    }
+
+    @Override
+    public Single<byte[]> loadImageSinge(String type, String res) {
+        return null;
     }
 
     @Override

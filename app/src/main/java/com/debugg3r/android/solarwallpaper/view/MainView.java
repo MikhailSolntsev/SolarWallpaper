@@ -10,7 +10,6 @@ public interface MainView {
 
     void setImage(Bitmap image);
 
-    Point getImageSize();
-
     void showToast(String s);
+
 }

@@ -13,10 +13,15 @@ import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
+import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.Response;
 import rx.Observable;
+import rx.Single;
+import rx.Subscriber;
 import rx.schedulers.Schedulers;
+import rx.subjects.BehaviorSubject;
 
 public class LoadServiceKit extends LoadService {
     private static LoadServiceKit mInstance;
@@ -73,43 +78,68 @@ public class LoadServiceKit extends LoadService {
     }
 
     @Override
-    public Observable<Bitmap> loadImageObservable(String type, String res) {
-        String imageUrl = LoadService.getImageUrl(type, res);
-        return Observable.just(imageUrl)
+    public Observable<Bitmap> loadImageObservable(String type, String resolution) {
+        final BehaviorSubject<Bitmap> result = BehaviorSubject.create();
+
+        String imageUrl = LoadService.getImageUrl(type, resolution);
+        Observable.just(imageUrl)
                 .observeOn(Schedulers.io())
-                .flatMap(url -> {
+                .map(url -> {
                     OkHttpClient client = getUnsafeOkHttpClient();
                     Request request = new Request.Builder()
                             .url(url)
                             .build();
+                    Call call = client.newCall(request);
 
-                    return Observable.just(client.newCall(request));
-                })
-                // do call
-                .flatMap(call -> {
+                    Response response = null;
                     try {
-                        return Observable.just(call.execute());
+                        response = call.execute();
                     } catch (IOException e) {
-                        return Observable.error(e);
+                        result.onError(e);
+                        //return Observable.error(e);
+                        return null;
                     }
-                })
-                // get response
-                .flatMap(response -> {
-                            try{
-                                return Observable.just(response.body().bytes());
-                            } catch (IOException e) {
-                                return Observable.create(f -> f.onError(e));
-                            }
-                        },
-                        throwable -> Observable.create(f -> f.onError(throwable)),
-                        () -> Observable.create(f -> f.onCompleted()))
-                // load bitmap
-                .flatMap(bytes -> Observable.just(BitmapFactory.decodeByteArray(bytes, 0, bytes.length)),
-                        throwable -> Observable.create(f -> f.onError(throwable)),
-                        () -> Observable.create(f -> f.onCompleted())
-                );
 
+                    if (response == null) {
+                        result.onCompleted();
+                        return null;
+                    }
+
+                    if (response.body() != null) {
+                        try {
+                            byte[] body = response.body().bytes();
+                            if (body == null) {
+                                result.onCompleted();
+                            }
+
+                            return body;
+                        } catch (IOException e) {
+                            result.onError(e);
+                        }
+                    } else {
+                        result.onCompleted();
+                    }
+                    return null;
+                })
+                .filter(body -> body != null)
+
+                // load bitmap
+                .subscribe(bytes -> {
+                    Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                    if (bmp == null) {
+                        result.onCompleted();
+                    }
+                    result.onNext(bmp);
+                });
+
+        return result;
     }
+
+    @Override
+    public Single<byte[]> loadImageSinge(String type, String resolution) {
+        return null;
+    }
+
 
     @Override
     public Bitmap loadImageSync(String type, String res) {

@@ -7,6 +7,7 @@ import android.util.Log;
 import com.debugg3r.android.solarwallpaper.model.BitmapService;
 import com.debugg3r.android.solarwallpaper.model.DataManager;
 import com.debugg3r.android.solarwallpaper.view.MainView;
+import com.debugg3r.android.solarwallpaper.view.MainViewState;
 
 import java.io.IOException;
 
@@ -20,9 +21,19 @@ public class MainPresenterImpl implements MainPresenter {
     private DataManager mDataManager;
     private MainView mView;
 
+    private MainViewState mState;
+
     public MainPresenterImpl(DataManager mDataManager) {
         this.mDataManager = mDataManager;
         mView = null;
+        mState = new MainViewState();
+        mState.setState(MainViewState.STATE_NOTHING);
+
+        showCurrentImage();
+    }
+
+    public void setmState(MainViewState mState) {
+        this.mState = mState;
     }
 
     private boolean isViewAttached() {
@@ -32,6 +43,7 @@ public class MainPresenterImpl implements MainPresenter {
     @Override
     public void attachView(MainView view) {
         mView = view;
+        mState.applyState(mView);
     }
 
     @Override
@@ -41,24 +53,27 @@ public class MainPresenterImpl implements MainPresenter {
 
     @Override
     public void loadCurrentImage() {
-        mView.showProgress();
+        mState.setState(MainViewState.STATE_LOADING);
+        mState.applyState(mView);
+
         mDataManager.getBitmapFromSdoObservable()
-                .observeOn(Schedulers.computation())
-                .flatMap(bmp -> {
-                            Point point = mView.getImageSize();
-                            bmp = BitmapService.fitBitmapToSize(bmp, point.x, point.y);
-                            return Observable.just(bmp);
-                        },
-                        throwable -> Observable.create(f -> f.onError(throwable)),
-                        () -> Observable.create(f -> f.onCompleted()))
+                .subscribeOn(Schedulers.computation())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(bmp -> {
-                            mView.hideProgress();
-                            mView.setImage(bmp);
+                .subscribe(
+                        //  onNext
+                        bmp -> {
+                            mState.setState(MainViewState.STATE_IMAGE);
+                            mState.setBitmap(bmp);
+                            mState.applyState(mView);
                         },
+                        //  onError
                         throwable -> {mView.hideProgress();
                                 throw new NullPointerException(throwable.getMessage());},
-                        () -> mView.hideProgress());
+                        //  onComplete
+                        () -> {
+                            mState.setState(MainViewState.STATE_IMAGE);
+                            mState.applyState(mView);
+                        });
     }
 
     @Override
@@ -69,11 +84,24 @@ public class MainPresenterImpl implements MainPresenter {
             loadCurrentImage();
         } else {
             // 2. if it is present, load it
+            mState.setState(MainViewState.STATE_LOADING);
+
             mDataManager.getBitmapFromFile(filename)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     // 3. set image
-                    .subscribe(bmp -> mView.setImage(bmp));
+                    .subscribe(bmp -> {
+                                mState.setBitmap(bmp);
+                                mState.setState(MainViewState.STATE_IMAGE);
+                                mState.applyState(mView);
+                            },
+                            throwable -> {
+                                mState.setState(MainViewState.STATE_NOTHING);
+                                mState.applyState(mView);
+                            },
+                            () -> {
+                                mState.applyState(mView);
+                            });
         }
     }
 
@@ -100,12 +128,6 @@ public class MainPresenterImpl implements MainPresenter {
 
                     mDataManager.showNotification(1);
                 });
-    }
-
-    @Override
-    public String checkLoadedType(String imageType) {
-        String newType = "";
-        return newType;
     }
 
 }

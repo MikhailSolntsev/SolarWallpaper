@@ -11,6 +11,7 @@ import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.BitmapCompat;
+import android.util.Log;
 import android.view.WindowManager;
 
 import com.debugg3r.android.solarwallpaper.R;
@@ -26,7 +27,7 @@ import rx.Observable;
 
 public class DataManager {
     public static final int PENDING_INTENT_NOTIFICATION = 24092017;
-
+    private static final String LOG_TAG = "SWP_DataManager";
     private final Context mContext;
     private SharedPreferencesHelper mSharedHelper;
 
@@ -47,15 +48,18 @@ public class DataManager {
         bmpObservable.doOnNext(bmp ->{
             OutputStream fout = null;
             File file = FileService.getOutputMediaFile(type);
+            Log.d(LOG_TAG, "getBitmapFromSdoObservable: filename: " + file.getAbsolutePath());
             try {
                 fout = new FileOutputStream(file);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
+            Log.d(LOG_TAG, "getBitmapFromSdoObservable: fout: " + fout);
             if (fout != null) {
                 bmp.compress(Bitmap.CompressFormat.PNG, 95, fout);
                 mSharedHelper.putString(mContext.getString(R.string.pref_stored_image), file.getAbsolutePath());
             }
+            Log.d(LOG_TAG, "getBitmapFromSdoObservable: done!");
         });
         return bmpObservable;
     }

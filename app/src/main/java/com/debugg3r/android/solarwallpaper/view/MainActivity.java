@@ -1,25 +1,20 @@
 package com.debugg3r.android.solarwallpaper.view;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Point;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.debugg3r.android.solarwallpaper.R;
 import com.debugg3r.android.solarwallpaper.SolarApplication;
-import com.debugg3r.android.solarwallpaper.model.SharedPreferencesHelper;
 import com.debugg3r.android.solarwallpaper.presenter.MainPresenter;
 
 import javax.inject.Inject;
@@ -27,47 +22,31 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
+import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
 
 public class MainActivity extends AppCompatActivity implements MainView{
 
     private static final String LOG_TAG = "MAIN_ACTIVITY";
+    private Unbinder unbinder;
 
     @Inject
     MainPresenter mainPresenter;
 
     @BindView(R.id.image_view_wall)
-    ImageView mImageViewWall;
-
-//    @BindView(R.id.loading_progress_bar)
-//    private ProgressBar mProgressBar;
-
-    private SharedPreferencesHelper mSharedHelper;
-    private String mImageType;
-    private Point mImageSize;
+    ImageView imageViewWall;
 
     private AlertDialog mProgressDialog;
+    //private ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ButterKnife.bind(this);
+        unbinder = ButterKnife.bind(this);
         SolarApplication.getComponent().inject(this);
-
-        //mImageViewWall = (ImageView) findViewById(R.id.image_view_wall);
-
-//        Button buttonShow = (Button) findViewById(R.id.button_show_image);
-//        buttonShow.setOnClickListener((view) -> mainPresenter.loadCurrentImage());
-
-//        Button buttonSet = (Button) findViewById(R.id.button_set_wallpaper);
-//        buttonSet.setOnClickListener((view) -> mainPresenter.setWallpaper());
-
-        //mProgressBar = (ProgressBar) findViewById(R.id.loading_progress_bar);
-
-        mSharedHelper = new SharedPreferencesHelper(this);
-        mImageType = mSharedHelper.getString(getString(R.string.pref_image_type));
-
     }
 
     @OnClick(R.id.button_show_image)
@@ -82,25 +61,22 @@ public class MainActivity extends AppCompatActivity implements MainView{
 
     @Override
     protected void onResume() {
-
         super.onResume();
 
         mainPresenter.attachView(this);
-
-        mainPresenter.showCurrentImage();
-
-        // check for image type change in settings
-        String newType = mSharedHelper.getString(getString(R.string.pref_image_type));
-        if (!newType.equals(mImageType)) {
-            mImageType = newType;
-            mainPresenter.loadCurrentImage();
-        }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+
         mainPresenter.detachView();
+    }
+
+    @Override
+    protected void onDestroy() {
+        unbinder.unbind();
+        super.onDestroy();
     }
 
     @Override
@@ -116,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements MainView{
                 Intent settingsIntent = new Intent(this, SettingsActivity.class);
                 startActivity(settingsIntent);
                 break;
+
             case R.id.menu_item_exit:
                 finish();
                 break;
@@ -126,37 +103,32 @@ public class MainActivity extends AppCompatActivity implements MainView{
     @Override
     public void showProgress() {
         if (mProgressDialog == null) {
+            ProgressBar bar = new ProgressBar(this);
             mProgressDialog = new AlertDialog.Builder(this)
-                    .setView(new ProgressBar(this))
+                    .setView(bar)
                     .create();
+            //mProgressDialog = new ProgressDialog(this, R.style.AppTheme);
         }
         mProgressDialog.show();
-//        mProgressBar.setVisibility(View.VISIBLE);
-//        mImageViewWall.setVisibility(View.GONE);
     }
 
     @Override
     public void hideProgress() {
         if (mProgressDialog != null && mProgressDialog.isShowing())
             mProgressDialog.dismiss();
-//        mProgressBar.setVisibility(View.GONE);
-//        mImageViewWall.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void setImage(Bitmap image) {
-        mImageViewWall.setImageBitmap(image);
-    }
-
-    @Override
-    public Point getImageSize() {
-        mImageSize = new Point(mImageViewWall.getHeight(), mImageViewWall.getWidth());
-        return mImageSize;
+        if (image != null)
+            imageViewWall.setImageBitmap(image);
     }
 
     @Override
     public void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT);
+        Observable.defer(() -> Observable.just(message))
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(text -> Toast.makeText(this, text, Toast.LENGTH_SHORT));
     }
 
 }

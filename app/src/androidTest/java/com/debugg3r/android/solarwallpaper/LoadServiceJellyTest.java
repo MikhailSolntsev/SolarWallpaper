@@ -113,5 +113,14 @@ public class LoadServiceJellyTest {
         Point size = dataManager.getScreenSize();
         assertNotEquals("Screen size iz 0", 0, size.x);
         assertNotEquals("Screen size iz 0", 0, size.y);
+
+        Bitmap bmp = dataManager.getBitmapFromSdoSync();
+        assertNotNull("Bmp is null", bmp);
     }
+
+    @Test
+    public void getSingle() {
+        LoadService service = LoadServiceFactory.getLoadService();
+    }
+
 }
