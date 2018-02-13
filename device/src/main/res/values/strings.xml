@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">device</string>
+    <string name="button_title">Title for big blue button</string>
+</resources>
