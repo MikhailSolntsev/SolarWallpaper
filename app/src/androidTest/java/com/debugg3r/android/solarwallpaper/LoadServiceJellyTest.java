@@ -15,7 +15,7 @@ import com.debugg3r.android.solarwallpaper.model.DataManager;
 import com.debugg3r.android.solarwallpaper.model.loadservice.LoadService;
 import com.debugg3r.android.solarwallpaper.model.loadservice.LoadServiceFactory;
 import com.debugg3r.android.solarwallpaper.model.loadservice.LoadServiceJelly;
-import com.debugg3r.android.solarwallpaper.model.loadservice.MySslSocketFactory;
+import com.debugg3r.android.data.image.network.MySslSocketFactory;
 
 import org.junit.Before;
 import org.junit.Test;

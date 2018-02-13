@@ -1,8 +1,9 @@
 package com.debugg3r.android.solarwallpaper.model.loadservice;
 
-import android.annotation.TargetApi;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+
+import com.debugg3r.android.data.image.network.MySslSocketFactory;
 
 import java.io.IOException;
 import java.io.InputStream;

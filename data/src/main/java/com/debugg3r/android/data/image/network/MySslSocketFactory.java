@@ -1,4 +1,4 @@
-package com.debugg3r.android.solarwallpaper.model.loadservice;
+package com.debugg3r.android.data.image.network;
 
 import java.io.IOException;
 import java.net.InetAddress;
